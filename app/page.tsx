@@ -138,9 +138,9 @@ export default function HomePage() {
             </div>
 
             {/* Right: Portrait Image */}
-            <div className="relative hidden lg:flex justify-end">
+            <div className="relative flex justify-center lg:justify-end">
               <div
-                className="relative w-[380px] h-[560px] rounded-3xl overflow-hidden border border-red-800/50"
+                className="relative w-full max-w-[340px] lg:w-[380px] h-[400px] lg:h-[560px] rounded-3xl overflow-hidden border border-red-800/50"
                 style={{ boxShadow: '0 0 80px rgba(220,0,0,0.35), 0 20px 60px rgba(0,0,0,0.8)' }}
               >
                 <Image
@@ -149,7 +149,7 @@ export default function HomePage() {
                   fill
                   className="object-cover object-top"
                   priority
-                  sizes="380px"
+                  sizes="(max-width:1024px) 340px, 380px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
@@ -192,7 +192,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-5">
             {escortTypes.map((type) => (
               <div
                 key={type.slug}
