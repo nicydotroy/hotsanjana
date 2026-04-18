@@ -56,28 +56,14 @@ export default function Footer() {
 
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-flex items-center gap-3 mb-5 group">
-              <div className="relative w-16 h-16 transition-transform duration-300 group-hover:scale-105">
+            <Link href="/" className="inline-flex mb-5 group">
+              <div className="relative w-20 h-20 transition-transform duration-300 group-hover:scale-105">
                 <Image
                   src="/logo.png"
                   alt="Hot Sanjana Logo"
                   fill
                   className="object-contain drop-shadow-[0_0_10px_rgba(220,0,0,0.6)]"
                 />
-              </div>
-              <div>
-                <span
-                  className="font-bold text-xl block"
-                  style={{
-                    background: 'linear-gradient(135deg, #dc0000, #ff6600, #ffd700)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}
-                >
-                  Hot Sanjana
-                </span>
-                <span className="text-xs text-red-400/70">Mumbai&apos;s #1 Escort</span>
               </div>
             </Link>
             <p className="text-gray-500 text-sm leading-relaxed mb-5">

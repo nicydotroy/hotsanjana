@@ -44,7 +44,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
+          <Link href="/" className="flex items-center group flex-shrink-0">
             <div className="relative w-14 h-14 md:w-16 md:h-16 transition-transform duration-300 group-hover:scale-105">
               <Image
                 src="/logo.png"
@@ -53,22 +53,6 @@ export default function Header() {
                 className="object-contain drop-shadow-[0_0_12px_rgba(220,0,0,0.7)]"
                 priority
               />
-            </div>
-            <div className="hidden sm:block">
-              <div
-                className="font-bold text-xl leading-tight"
-                style={{
-                  background: 'linear-gradient(135deg, #dc0000, #ff6600, #ffd700)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-              >
-                Hot Sanjana
-              </div>
-              <div className="text-xs text-red-400/80 leading-tight tracking-wide">
-                Mumbai&apos;s #1 Escort Service
-              </div>
             </div>
           </Link>
 
