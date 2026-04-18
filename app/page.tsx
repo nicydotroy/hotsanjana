@@ -1,13 +1,12 @@
 import type { Metadata } from 'next'
-import Hero from '@/components/Hero'
+import Image from 'next/image'
+import Link from 'next/link'
 import WhyChooseUs from '@/components/WhyChooseUs'
 import LocationGrid from '@/components/LocationGrid'
 import FAQSection from '@/components/FAQSection'
 import BookingCTA from '@/components/BookingCTA'
-import ServiceCard from '@/components/ServiceCard'
-import { faqs } from '@/data/services'
+import { faqs, SITE_CONFIG, testimonials } from '@/data/services'
 import { escortTypes } from '@/data/escort-types'
-import { testimonials } from '@/data/services'
 
 export const metadata: Metadata = {
   title: 'Premium Escorts in Mumbai | Hot Sanjana | 24/7 Available',
@@ -68,16 +67,106 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
       />
 
-      {/* ── Hero ── */}
-      <Hero
-        badge="Mumbai's #1 Escort Service"
-        title="Premium Escorts in Mumbai"
-        subtitle="24/7 Available · Verified · Discreet"
-        description="Experience the finest escort service in Mumbai with 500+ verified profiles across Andheri, Bandra, Juhu, Thane, Navi Mumbai and 90+ more locations. Professional, discreet, and available whenever you need."
-        ctaText="View Locations"
-        ctaHref="/location"
-        showStats
-      />
+      {/* ── Hero: Split Layout ── */}
+      <section
+        className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden"
+        style={{ background: 'linear-gradient(160deg, #000000 0%, #0f0000 30%, #1a0000 60%, #0a0000 100%)' }}
+        aria-label="Main banner"
+      >
+        {/* Fire glow orbs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-20 left-1/3 w-[600px] h-[600px] rounded-full blur-3xl opacity-20"
+            style={{ background: 'radial-gradient(circle, #ff4500 0%, #dc0000 50%, transparent 70%)' }} />
+          <div className="absolute bottom-0 -left-20 w-[400px] h-[400px] rounded-full blur-3xl opacity-10"
+            style={{ background: 'radial-gradient(circle, #ff6600 0%, #cc3300 50%, transparent 70%)' }} />
+        </div>
+        {/* Top fire line */}
+        <div className="absolute top-0 left-0 right-0 h-[3px]"
+          style={{ background: 'linear-gradient(90deg, transparent, #dc0000, #ff6600, #ffd700, #ff6600, #dc0000, transparent)' }} />
+
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+            {/* Left: Text Content */}
+            <div>
+              <div
+                className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2 rounded-full mb-6 border"
+                style={{ background: 'rgba(220,0,0,0.15)', borderColor: 'rgba(220,0,0,0.4)', color: '#ff6600' }}
+              >
+                🔥 Mumbai&apos;s #1 Escort Service 🔥
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-4 leading-tight">
+                Premium{' '}
+                <span style={{ background: 'linear-gradient(135deg, #dc0000, #ff6600, #ffd700)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                  Escorts
+                </span>
+                <br />in Mumbai
+              </h1>
+              <p className="text-orange-400 text-xl font-semibold mb-4">24/7 Available · Verified · Discreet</p>
+              <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-lg">
+                Mumbai&apos;s top escort service with 500+ verified profiles across Andheri, Bandra, Juhu, Thane, Navi Mumbai and 90+ more locations.
+              </p>
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-3 mb-8">
+                {[['500+', 'Escorts'], ['90+', 'Locations'], ['24/7', 'Available']].map(([num, label]) => (
+                  <div key={label} className="rounded-xl p-3 border border-red-900/30 text-center" style={{ background: 'rgba(139,0,0,0.1)' }}>
+                    <div className="text-2xl font-black" style={{ background: 'linear-gradient(135deg, #dc0000, #ff6600, #ffd700)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>{num}</div>
+                    <div className="text-xs text-gray-400 mt-0.5">{label}</div>
+                  </div>
+                ))}
+              </div>
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href={`tel:${SITE_CONFIG.phone}`}
+                  rel="nofollow"
+                  className="flex items-center justify-center gap-2 font-bold px-7 py-4 rounded-full text-white text-base hover:-translate-y-0.5 transition-transform"
+                  style={{ background: 'linear-gradient(135deg, #8b0000, #dc0000, #ff4500)', boxShadow: '0 4px 25px rgba(220,0,0,0.45)' }}
+                >
+                  📞 Book on Call
+                </a>
+                <a
+                  href={SITE_CONFIG.telegramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="flex items-center justify-center gap-2 font-bold px-7 py-4 rounded-full text-black text-base hover:-translate-y-0.5 transition-transform"
+                  style={{ background: 'linear-gradient(135deg, #cc9900, #ffd700)', boxShadow: '0 4px 25px rgba(255,215,0,0.35)' }}
+                >
+                  💬 Book on Telegram
+                </a>
+              </div>
+            </div>
+
+            {/* Right: Portrait Image */}
+            <div className="relative hidden lg:flex justify-end">
+              <div
+                className="relative w-[380px] h-[560px] rounded-3xl overflow-hidden border border-red-800/50"
+                style={{ boxShadow: '0 0 80px rgba(220,0,0,0.35), 0 20px 60px rgba(0,0,0,0.8)' }}
+              >
+                <Image
+                  src="/images/escort-types/vip-escorts-mumbai.webp"
+                  alt="Premium Escorts Mumbai – Hot Sanjana"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                  sizes="380px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <div className="absolute bottom-5 left-4 right-4">
+                  <div className="rounded-2xl px-4 py-3 border border-red-700/40" style={{ background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(8px)' }}>
+                    <p className="text-white font-bold text-sm">Available Right Now</p>
+                    <p className="text-gray-400 text-xs mt-0.5">500+ Verified Profiles · All Mumbai Areas</p>
+                  </div>
+                </div>
+              </div>
+              {/* Glow behind image */}
+              <div className="absolute inset-0 -z-10 blur-3xl opacity-25 scale-95"
+                style={{ background: 'linear-gradient(135deg, #dc0000, #ff6600, #ffd700)' }} />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── Escort Types / Services Grid ── */}
       <section className="py-16 lg:py-20 section-darker">
@@ -103,14 +192,67 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-5">
             {escortTypes.map((type) => (
-              <ServiceCard
+              <div
                 key={type.slug}
-                name={type.name}
-                href={`/escort-types/${type.slug}`}
-                badge={type.badge}
-              />
+                className="group rounded-2xl overflow-hidden border border-red-900/40 hover:border-red-500/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(220,0,0,0.3)]"
+                style={{ background: '#0d0000' }}
+              >
+                <Link href={`/escort-types/${type.slug}`} className="block">
+                  <div className="relative h-52 sm:h-60 overflow-hidden">
+                    {type.image ? (
+                      <Image
+                        src={type.image}
+                        alt={type.imageAlt}
+                        fill
+                        className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                        sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 25vw"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-5xl" style={{ background: '#1f0800' }}>
+                        {type.icon}
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
+                    {type.badge && (
+                      <div
+                        className="absolute top-2 left-2 text-black text-[10px] font-black px-2.5 py-0.5 rounded-full"
+                        style={{ background: 'linear-gradient(135deg, #cc9900, #ffd700)' }}
+                      >
+                        {type.badge}
+                      </div>
+                    )}
+                    <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 to-transparent">
+                      <h3 className="text-white font-bold text-sm leading-tight group-hover:text-red-400 transition-colors">
+                        {type.name}
+                      </h3>
+                      <p className="text-orange-400 text-[11px] mt-0.5 line-clamp-1">{type.tagline}</p>
+                    </div>
+                  </div>
+                </Link>
+                <div className="px-3 pb-4 pt-2 grid grid-cols-2 gap-2">
+                  <a
+                    href={`tel:${SITE_CONFIG.phone}`}
+                    className="flex items-center justify-center gap-1 text-[11px] sm:text-xs font-bold py-2 rounded-full text-white hover:-translate-y-0.5 transition-transform"
+                    style={{ background: 'linear-gradient(135deg, #8b0000, #dc0000)' }}
+                    rel="nofollow"
+                    aria-label={`Call to book ${type.name}`}
+                  >
+                    📞 Call Now
+                  </a>
+                  <a
+                    href={SITE_CONFIG.telegramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="flex items-center justify-center gap-1 text-[11px] sm:text-xs font-bold py-2 rounded-full text-black hover:-translate-y-0.5 transition-transform"
+                    style={{ background: 'linear-gradient(135deg, #cc9900, #ffd700)' }}
+                    aria-label={`Telegram to book ${type.name}`}
+                  >
+                    💬 Telegram
+                  </a>
+                </div>
+              </div>
             ))}
           </div>
         </div>

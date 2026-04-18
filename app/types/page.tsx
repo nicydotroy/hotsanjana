@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Hero from '@/components/Hero'
 import BookingCTA from '@/components/BookingCTA'
+import { SITE_CONFIG } from '@/data/services'
 import { escortTypes } from '@/data/escort-types'
 
 export const metadata: Metadata = {
@@ -39,62 +40,65 @@ export default function TypesPage() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-5">
             {escortTypes.map((type) => (
-              <Link
+              <div
                 key={type.slug}
-                href={`/escort-types/${type.slug}`}
-                className="group relative rounded-2xl overflow-hidden border border-red-900/40 hover:border-red-500/70 transition-all duration-400 hover:-translate-y-2 hover:shadow-[0_8px_40px_rgba(220,0,0,0.35)]"
-                style={{ background: '#0f0000' }}
+                className="group rounded-2xl overflow-hidden border border-red-900/40 hover:border-red-500/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(220,0,0,0.3)]"
+                style={{ background: '#0d0000' }}
               >
-                {/* Portrait Image */}
-                <div className="relative w-full h-72 sm:h-80 overflow-hidden">
-                  {type.image ? (
-                    <Image
-                      src={type.image}
-                      alt={type.imageAlt}
-                      fill
-                      className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
-                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center text-5xl" style={{ background: 'linear-gradient(135deg, #1f0800, #2a0a00)' }}>
-                      {type.icon}
-                    </div>
-                  )}
-
-                  {/* Dark gradient overlay – stronger at bottom */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-
-                  {/* Gold badge */}
-                  {type.badge && (
-                    <div
-                      className="absolute top-2 left-2 text-black text-[10px] font-black px-2 py-0.5 rounded-full tracking-wide uppercase"
-                      style={{ background: 'linear-gradient(135deg, #cc9900, #ffd700)' }}
-                    >
-                      {type.badge}
-                    </div>
-                  )}
-
-                  {/* Fire border glow on hover */}
-                  <div className="absolute inset-0 ring-0 group-hover:ring-2 ring-red-500/50 rounded-2xl transition-all duration-300" />
-
-                  {/* Text overlay at bottom */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="text-white font-bold text-sm sm:text-base leading-tight mb-0.5 group-hover:text-red-400 transition-colors duration-300">
-                      {type.name}
-                    </h3>
-                    <p className="text-orange-400 text-[11px] sm:text-xs leading-snug line-clamp-1 opacity-90">
-                      {type.tagline}
-                    </p>
-
-                    {/* CTA – slides up on hover */}
-                    <div className="mt-2 overflow-hidden max-h-0 group-hover:max-h-10 transition-all duration-300">
-                      <span className="inline-flex items-center gap-1 text-xs font-semibold text-white bg-red-700 hover:bg-red-600 px-3 py-1 rounded-full">
-                        View →
-                      </span>
+                <Link href={`/escort-types/${type.slug}`} className="block">
+                  <div className="relative w-full h-64 sm:h-72 overflow-hidden">
+                    {type.image ? (
+                      <Image
+                        src={type.image}
+                        alt={type.imageAlt}
+                        fill
+                        className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-5xl" style={{ background: '#1f0800' }}>
+                        {type.icon}
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                    {type.badge && (
+                      <div
+                        className="absolute top-2 left-2 text-black text-[10px] font-black px-2.5 py-0.5 rounded-full"
+                        style={{ background: 'linear-gradient(135deg, #cc9900, #ffd700)' }}
+                      >
+                        {type.badge}
+                      </div>
+                    )}
+                    <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 to-transparent">
+                      <h3 className="text-white font-bold text-sm leading-tight group-hover:text-red-400 transition-colors">
+                        {type.name}
+                      </h3>
+                      <p className="text-orange-400 text-[11px] mt-0.5 line-clamp-1">{type.tagline}</p>
                     </div>
                   </div>
+                </Link>
+                <div className="px-3 pb-4 pt-3 grid grid-cols-2 gap-2">
+                  <a
+                    href={`tel:${SITE_CONFIG.phone}`}
+                    className="flex items-center justify-center gap-1 text-[11px] sm:text-xs font-bold py-2.5 rounded-full text-white hover:-translate-y-0.5 transition-transform"
+                    style={{ background: 'linear-gradient(135deg, #8b0000, #dc0000)' }}
+                    rel="nofollow"
+                    aria-label={`Call to book ${type.name}`}
+                  >
+                    📞 Call Now
+                  </a>
+                  <a
+                    href={SITE_CONFIG.telegramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="flex items-center justify-center gap-1 text-[11px] sm:text-xs font-bold py-2.5 rounded-full text-black hover:-translate-y-0.5 transition-transform"
+                    style={{ background: 'linear-gradient(135deg, #cc9900, #ffd700)' }}
+                    aria-label={`Telegram to book ${type.name}`}
+                  >
+                    💬 Telegram
+                  </a>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>

@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import LocationGrid from '@/components/LocationGrid'
 import Hero from '@/components/Hero'
 import BookingCTA from '@/components/BookingCTA'
 import { locations } from '@/data/locations'
+import { escortTypes } from '@/data/escort-types'
 
 export const metadata: Metadata = {
   title: 'Escorts by Location in Mumbai | All Areas | Hot Sanjana',
@@ -31,6 +33,50 @@ export default function LocationPage() {
         ctaHref="/"
         showStats={false}
       />
+
+      {/* ── Escort Category Photo Strip ── */}
+      <section className="py-8 lg:py-12" style={{ background: '#040000' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-sm font-bold tracking-[0.25em] text-red-500 uppercase mb-5">Our Escort Categories</p>
+          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3 lg:gap-4">
+            {escortTypes.slice(0, 6).map((type) => (
+              <a
+                key={type.slug}
+                href={`/escort-types/${type.slug}`}
+                className="group relative rounded-xl overflow-hidden border border-red-900/40 hover:border-red-500/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_6px_20px_rgba(220,0,0,0.3)]"
+              >
+                <div className="relative h-36 sm:h-44 lg:h-52 overflow-hidden">
+                  {type.image ? (
+                    <Image
+                      src={type.image}
+                      alt={type.imageAlt}
+                      fill
+                      className="object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                      sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 17vw"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-4xl" style={{ background: '#1f0800' }}>
+                      {type.icon}
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                  {type.badge && (
+                    <div
+                      className="absolute top-1.5 left-1.5 text-black text-[9px] font-black px-2 py-0.5 rounded-full"
+                      style={{ background: 'linear-gradient(135deg, #cc9900, #ffd700)' }}
+                    >
+                      {type.badge}
+                    </div>
+                  )}
+                  <div className="absolute bottom-2 left-2 right-2">
+                    <p className="text-white text-xs font-bold leading-tight">{type.name}</p>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="py-16 lg:py-20" style={{ background: '#0a0a0a' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
