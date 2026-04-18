@@ -39,7 +39,7 @@ function LocationCard({ loc, prefix }: { loc: Location; prefix: string }) {
       style={{ background: '#0d0000' }}
     >
       <Link href={`${prefix}/${loc.slug}`} className="block">
-        <div className="relative h-[220px] sm:h-52 overflow-hidden">
+        <div className="relative h-[440px] sm:h-52 overflow-hidden">
           <Image
             src={getLocationImage(loc.slug)}
             alt={`Escorts in ${loc.name}`}
