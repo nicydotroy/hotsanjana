@@ -37,51 +37,61 @@ export default function TypesPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-5">
             {escortTypes.map((type) => (
               <Link
                 key={type.slug}
                 href={`/escort-types/${type.slug}`}
-                className="group relative rounded-2xl overflow-hidden border border-red-900/30 hover:border-red-700/50 hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
-                style={{ background: 'linear-gradient(135deg, #140500, #1f0a00)' }}
+                className="group relative rounded-2xl overflow-hidden border border-red-900/40 hover:border-red-500/70 transition-all duration-400 hover:-translate-y-2 hover:shadow-[0_8px_40px_rgba(220,0,0,0.35)]"
+                style={{ background: '#0f0000' }}
               >
-                {/* Category Image */}
-                <div className="relative w-full h-52 overflow-hidden">
+                {/* Portrait Image */}
+                <div className="relative w-full overflow-hidden" style={{ aspectRatio: '3/4' }}>
                   {type.image ? (
                     <Image
                       src={type.image}
                       alt={type.imageAlt}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
                     />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center text-6xl" style={{ background: '#1f0800' }}>
+                    <div className="w-full h-full flex items-center justify-center text-5xl" style={{ background: 'linear-gradient(135deg, #1f0800, #2a0a00)' }}>
                       {type.icon}
                     </div>
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+
+                  {/* Dark gradient overlay – stronger at bottom */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+
+                  {/* Gold badge */}
                   {type.badge && (
                     <div
-                      className="absolute top-3 right-3 text-black text-xs font-bold px-3 py-1 rounded-full"
+                      className="absolute top-2 left-2 text-black text-[10px] font-black px-2 py-0.5 rounded-full tracking-wide uppercase"
                       style={{ background: 'linear-gradient(135deg, #cc9900, #ffd700)' }}
                     >
                       {type.badge}
                     </div>
                   )}
-                  <div className="absolute bottom-3 left-4 text-3xl">{type.icon}</div>
-                </div>
 
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition-colors">
-                    {type.name}
-                  </h3>
-                  <p className="text-orange-400 text-sm font-medium mb-3">{type.tagline}</p>
-                  <p className="text-gray-400 text-sm leading-relaxed">{type.description}</p>
+                  {/* Fire border glow on hover */}
+                  <div className="absolute inset-0 ring-0 group-hover:ring-2 ring-red-500/50 rounded-2xl transition-all duration-300" />
 
-                  <div className="mt-4 flex items-center gap-1 text-red-400 text-sm font-semibold group-hover:gap-2 transition-all">
-                    <span>View profiles</span>
-                    <span>→</span>
+                  {/* Text overlay at bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="text-white font-bold text-sm sm:text-base leading-tight mb-0.5 group-hover:text-red-400 transition-colors duration-300">
+                      {type.name}
+                    </h3>
+                    <p className="text-orange-400 text-[11px] sm:text-xs leading-snug line-clamp-1 opacity-90">
+                      {type.tagline}
+                    </p>
+
+                    {/* CTA – slides up on hover */}
+                    <div className="mt-2 overflow-hidden max-h-0 group-hover:max-h-10 transition-all duration-300">
+                      <span className="inline-flex items-center gap-1 text-xs font-semibold text-white bg-red-700 hover:bg-red-600 px-3 py-1 rounded-full">
+                        View →
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Link>
