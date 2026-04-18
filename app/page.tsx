@@ -200,14 +200,14 @@ export default function HomePage() {
                 style={{ background: '#0d0000' }}
               >
                 <Link href={`/escort-types/${type.slug}`} className="block">
-                  <div className="relative h-52 sm:h-60 overflow-hidden">
+                  <div className="relative h-[440px] sm:h-60 overflow-hidden">
                     {type.image ? (
                       <Image
                         src={type.image}
                         alt={type.imageAlt}
                         fill
                         className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
-                        sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 25vw"
+                        sizes="(max-width:640px) 100vw, (max-width:1024px) 33vw, 25vw"
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center text-5xl" style={{ background: '#1f0800' }}>
