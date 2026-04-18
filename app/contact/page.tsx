@@ -6,7 +6,7 @@ import { SITE_CONFIG } from '@/data/services'
 export const metadata: Metadata = {
   title: 'Contact Us | Hot Sanjana | +91-9038976363',
   description:
-    'Contact Hot Sanjana for premium escort bookings in Mumbai. Call +91-9038976363 or Telegram @hotsanjana. Available 24/7 across all Mumbai locations.',
+    'Contact Hot Sanjana for premium escort bookings in Mumbai. Call +91-9038976363 or WhatsApp +91-90389-76363. Available 24/7 across all Mumbai locations.',
   alternates: { canonical: 'https://hotsanjana.in/contact' },
 }
 
@@ -57,7 +57,7 @@ export default function ContactPage() {
                 </a>
 
                 <a
-                  href={SITE_CONFIG.telegramUrl}
+                  href={SITE_CONFIG.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer nofollow"
                   className="flex items-center gap-5 p-5 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl border border-blue-200 hover:border-blue-400 hover:shadow-lg group transition-all duration-300 hover:-translate-y-0.5"
@@ -66,9 +66,9 @@ export default function ContactPage() {
                     💬
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 font-medium">Message on Telegram</p>
+                    <p className="text-sm text-gray-500 font-medium">Message on WhatsApp</p>
                     <p className="text-xl font-bold text-blue-600 group-hover:text-blue-700">
-                      @{SITE_CONFIG.telegramHandle}
+                      @{SITE_CONFIG.whatsappDisplay}
                     </p>
                     <p className="text-xs text-gray-400 mt-0.5">Fast, secure & private messaging</p>
                   </div>
@@ -100,7 +100,7 @@ export default function ContactPage() {
                   {
                     step: '1',
                     title: 'Contact Us',
-                    desc: 'Call or message on Telegram. We respond within 2 minutes.',
+                    desc: 'Call or message on WhatsApp. We respond within 2 minutes.',
                   },
                   {
                     step: '2',

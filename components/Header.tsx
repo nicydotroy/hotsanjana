@@ -81,7 +81,7 @@ export default function Header() {
               <span className="lg:hidden">Call</span>
             </a>
             <a
-              href={SITE_CONFIG.telegramUrl}
+              href={SITE_CONFIG.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer nofollow"
               className="flex items-center gap-2 px-5 py-2 text-sm font-bold text-black rounded-full hover:-translate-y-0.5 transition-all duration-200"
@@ -138,7 +138,7 @@ export default function Header() {
               {SITE_CONFIG.phoneDisplay}
             </a>
             <a
-              href={SITE_CONFIG.telegramUrl}
+              href={SITE_CONFIG.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer nofollow"
               className="flex items-center justify-center gap-2 px-4 py-3 text-sm font-bold text-black rounded-full transition-all"
@@ -149,7 +149,7 @@ export default function Header() {
               }}
             >
               <MessageCircle size={16} />
-              Book on Telegram
+              Book on WhatsApp
             </a>
           </div>
         </div>

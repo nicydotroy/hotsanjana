@@ -156,9 +156,9 @@ export default function AboutPage() {
             </div>
             <div className="rounded-2xl p-6 border border-red-900/30 hover:border-red-700/50 transition-colors" style={{ background: 'linear-gradient(135deg, #140500, #1f0a00)' }}>
               <div className="text-3xl mb-3">💬</div>
-              <p className="font-semibold text-white mb-1">Telegram</p>
-              <a href={SITE_CONFIG.telegramUrl} target="_blank" rel="noopener noreferrer nofollow" className="text-yellow-400 font-bold hover:text-yellow-300">
-                @{SITE_CONFIG.telegramHandle}
+              <p className="font-semibold text-white mb-1">WhatsApp</p>
+              <a href={SITE_CONFIG.whatsappUrl} target="_blank" rel="noopener noreferrer nofollow" className="text-yellow-400 font-bold hover:text-yellow-300">
+                {SITE_CONFIG.whatsappDisplay}
               </a>
             </div>
             <div className="rounded-2xl p-6 border border-red-900/30 hover:border-red-700/50 transition-colors" style={{ background: 'linear-gradient(135deg, #140500, #1f0a00)' }}>

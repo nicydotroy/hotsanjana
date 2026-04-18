@@ -23,7 +23,7 @@ export default function Hero({
   showStats = true,
   location,
 }: HeroProps) {
-  const telegramMessage = location
+  const whatsappMessage = location
     ? `Hi I want to book escorts in ${location}`
     : 'Hi I want to book an escort'
 
@@ -136,7 +136,7 @@ export default function Hero({
             Call Now: {SITE_CONFIG.phoneDisplay}
           </a>
           <a
-            href={`${SITE_CONFIG.telegramUrl}?text=${encodeURIComponent(telegramMessage)}`}
+            href={`${SITE_CONFIG.whatsappUrl}?text=${encodeURIComponent(whatsappMessage)}`}
             target="_blank"
             rel="noopener noreferrer nofollow"
             className="flex items-center gap-3 px-8 py-4 font-bold text-lg rounded-full w-full sm:w-auto justify-center transition-all duration-300 hover:-translate-y-1 text-black"
@@ -146,7 +146,7 @@ export default function Hero({
             }}
           >
             <MessageCircle size={22} />
-            Book on Telegram
+            Book on WhatsApp
           </a>
         </div>
 

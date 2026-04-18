@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!loc) return { title: 'Not Found' }
 
   const title = `Call Girls in ${loc.name} | Hot Sanjana | 24/7 Service`
-  const description = `Verified call girls in ${loc.name}, ${loc.area}. Discreet, professional & available 24/7. Book now – Call +91-9038976363 or message on Telegram.`
+  const description = `Verified call girls in ${loc.name}, ${loc.area}. Discreet, professional & available 24/7. Book now – Call +91-9038976363 or message on WhatsApp.`
 
   return {
     title,
@@ -50,7 +50,7 @@ export default async function CallGirlsLocationPage({ params }: PageProps) {
   const locationFaqs = [
     {
       question: `How do I contact call girls in ${loc.name}?`,
-      answer: `You can reach us 24/7 by calling ${SITE_CONFIG.phoneDisplay} or messaging us on Telegram @${SITE_CONFIG.telegramHandle}. Simply mention "${loc.name}" and your preferred time. We confirm bookings within minutes.`,
+      answer: `You can reach us 24/7 by calling ${SITE_CONFIG.phoneDisplay} or messaging us on WhatsApp @${SITE_CONFIG.whatsappDisplay}. Simply mention "${loc.name}" and your preferred time. We confirm bookings within minutes.`,
     },
     {
       question: `Are call girls in ${loc.name} available late at night?`,
@@ -104,7 +104,7 @@ export default async function CallGirlsLocationPage({ params }: PageProps) {
         badge={loc.area}
         title={`Call Girls in ${loc.name}`}
         subtitle="Professional · Discreet · Available 24/7"
-        description={`Find verified, professional call girls in ${loc.name}. ${loc.description} Instant booking available – call or message on Telegram anytime.`}
+        description={`Find verified, professional call girls in ${loc.name}. ${loc.description} Instant booking available – call or message on WhatsApp anytime.`}
         ctaText="Browse All Locations"
         ctaHref="/location"
         location={loc.name}

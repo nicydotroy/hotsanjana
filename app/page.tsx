@@ -126,13 +126,13 @@ export default function HomePage() {
                   📞 Book on Call
                 </a>
                 <a
-                  href={SITE_CONFIG.telegramUrl}
+                  href={SITE_CONFIG.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer nofollow"
                   className="flex items-center justify-center gap-2 font-bold px-7 py-4 rounded-full text-black text-base hover:-translate-y-0.5 transition-transform"
                   style={{ background: 'linear-gradient(135deg, #cc9900, #ffd700)', boxShadow: '0 4px 25px rgba(255,215,0,0.35)' }}
                 >
-                  💬 Book on Telegram
+                  💬 Book on WhatsApp
                 </a>
               </div>
             </div>
@@ -242,14 +242,14 @@ export default function HomePage() {
                     📞 Call Now
                   </a>
                   <a
-                    href={SITE_CONFIG.telegramUrl}
+                    href={SITE_CONFIG.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="flex items-center justify-center gap-1 text-[11px] sm:text-xs font-bold py-2 rounded-full text-black hover:-translate-y-0.5 transition-transform"
                     style={{ background: 'linear-gradient(135deg, #cc9900, #ffd700)' }}
-                    aria-label={`Telegram to book ${type.name}`}
+                    aria-label={`WhatsApp to book ${type.name}`}
                   >
-                    💬 Telegram
+                    💬 WhatsApp
                   </a>
                 </div>
               </div>

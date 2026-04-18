@@ -37,14 +37,14 @@ export default function Footer() {
               Call Now
             </a>
             <a
-              href={SITE_CONFIG.telegramUrl}
+              href={SITE_CONFIG.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer nofollow"
               className="flex items-center gap-2 px-6 py-3 font-bold text-white rounded-full hover:-translate-y-0.5 transition-all border border-orange-700/50"
               style={{ background: 'rgba(255, 102, 0, 0.15)' }}
             >
               <MessageCircle size={18} />
-              Telegram
+              WhatsApp
             </a>
           </div>
         </div>
@@ -74,9 +74,9 @@ export default function Footer() {
                 <Phone size={16} className="text-red-600 flex-shrink-0" />
                 {SITE_CONFIG.phoneDisplay}
               </a>
-              <a href={SITE_CONFIG.telegramUrl} target="_blank" rel="noopener noreferrer nofollow" className="flex items-center gap-3 text-gray-500 hover:text-orange-400 transition-colors">
+              <a href={SITE_CONFIG.whatsappUrl} target="_blank" rel="noopener noreferrer nofollow" className="flex items-center gap-3 text-gray-500 hover:text-orange-400 transition-colors">
                 <MessageCircle size={16} className="text-orange-600 flex-shrink-0" />
-                @{SITE_CONFIG.telegram}
+                {SITE_CONFIG.whatsappDisplay}
               </a>
               <a href={`mailto:${SITE_CONFIG.email}`} className="flex items-center gap-3 text-gray-500 hover:text-yellow-400 transition-colors">
                 <Mail size={16} className="text-yellow-600 flex-shrink-0" />

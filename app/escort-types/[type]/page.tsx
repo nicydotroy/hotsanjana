@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!escortType) return { title: 'Not Found' }
 
   const title = `${escortType.name} in Mumbai | Hot Sanjana | 24/7 Available`
-  const description = `${escortType.tagline}. ${escortType.description} Book now – call +91-9038976363 or Telegram @hotsanjana`
+  const description = `${escortType.tagline}. ${escortType.description} Book now – call +91-9038976363 or WhatsApp +91-90389-76363`
 
   return {
     title,
@@ -42,7 +42,7 @@ export default async function EscortTypePage({ params }: PageProps) {
   const typeFaqs = [
     {
       question: `How do I book ${escortType.name} in Mumbai?`,
-      answer: `Booking ${escortType.name} is simple. Call us at +91-9038976363 or message on Telegram @hotsanjana. Mention "${escortType.name}" and your preferred location and time. We confirm within minutes.`,
+      answer: `Booking ${escortType.name} is simple. Call us at +91-9038976363 or message on WhatsApp @hotsanjana. Mention "${escortType.name}" and your preferred location and time. We confirm within minutes.`,
     },
     {
       question: `Are ${escortType.name} available 24 hours?`,

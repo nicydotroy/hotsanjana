@@ -5,9 +5,8 @@ export const SITE_CONFIG = {
   baseUrl: 'https://hotsanjana.in',
   phone: '+919038976363',
   phoneDisplay: '+91-90389-76363',
-  telegram: 'hotsanjana',
-  telegramHandle: 'hotsanjana',
-  telegramUrl: 'https://t.me/hotsanjana',
+  whatsappUrl: 'https://wa.me/919038976363',
+  whatsappDisplay: '+91-90389-76363',
   email: 'sanjanadotsingh@gmail.com',
   whatsapp: '919038976363',
   primaryColor: '#FF1493',
@@ -150,7 +149,7 @@ export const testimonials = [
     location: 'Andheri',
     rating: 5,
     date: 'Feb 2025',
-    text: 'First-time user and I was very impressed with the quick response on Telegram and the quality of the companion. 10/10 experience.',
+    text: 'First-time user and I was very impressed with the quick response on WhatsApp and the quality of the companion. 10/10 experience.',
   },
   {
     id: 5,
@@ -166,14 +165,14 @@ export const testimonials = [
     location: 'Navi Mumbai',
     rating: 5,
     date: 'Mar 2025',
-    text: 'Used the service three times now. Consistent quality, always discreet. The Telegram booking is very convenient. Strongly recommend.',
+    text: 'Used the service three times now. Consistent quality, always discreet. The WhatsApp booking is very convenient. Strongly recommend.',
   },
 ]
 
 export const faqs = [
   {
     question: 'How do I book an escort in Mumbai?',
-    answer: 'Booking is simple: contact us via Telegram @hotsanjana or call +91-90389-76363. Tell us your preferred type of companion, location, date, and time. We confirm availability and send profile options within minutes.',
+    answer: 'Booking is simple: contact us via WhatsApp +91-90389-76363 or call +91-90389-76363. Tell us your preferred type of companion, location, date, and time. We confirm availability and send profile options within minutes.',
   },
   {
     question: 'Are all escort profiles verified?',

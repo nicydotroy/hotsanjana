@@ -88,12 +88,12 @@ export default function TypesPage() {
                     📞 Call Now
                   </a>
                   <a
-                    href={SITE_CONFIG.telegramUrl}
+                    href={SITE_CONFIG.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="flex items-center justify-center gap-1 text-[11px] sm:text-xs font-bold py-2.5 rounded-full text-black hover:-translate-y-0.5 transition-transform"
                     style={{ background: 'linear-gradient(135deg, #cc9900, #ffd700)' }}
-                    aria-label={`Telegram to book ${type.name}`}
+                    aria-label={`WhatsApp to book ${type.name}`}
                   >
                     💬 Telegram
                   </a>

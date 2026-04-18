@@ -51,11 +51,11 @@ export default async function EscortLocationPage({ params }: PageProps) {
   const locationFaqs = [
     {
       question: `Are escorts available 24/7 in ${loc.name}?`,
-      answer: `Yes! Our escorts in ${loc.name} are available round the clock, 24 hours a day, 7 days a week including weekends and public holidays. You can book at any time by calling us or messaging on Telegram.`,
+      answer: `Yes! Our escorts in ${loc.name} are available round the clock, 24 hours a day, 7 days a week including weekends and public holidays. You can book at any time by calling us or messaging on WhatsApp.`,
     },
     {
       question: `How do I book an escort in ${loc.name}?`,
-      answer: `Booking is simple. Call us at ${SITE_CONFIG.phoneDisplay} or message us on Telegram @${SITE_CONFIG.telegramHandle}. Tell us your preferred location in ${loc.name}, preferred time, and any special requirements. We confirm within minutes.`,
+      answer: `Booking is simple. Call us at ${SITE_CONFIG.phoneDisplay} or message us on WhatsApp @${SITE_CONFIG.whatsappDisplay}. Tell us your preferred location in ${loc.name}, preferred time, and any special requirements. We confirm within minutes.`,
     },
     {
       question: `Do you offer incall and outcall services in ${loc.name}?`,
@@ -265,7 +265,7 @@ export default async function EscortLocationPage({ params }: PageProps) {
 
       <BookingCTA
         title={`Book an Escort in ${loc.name} Tonight`}
-        subtitle={`Available 24/7 across ${loc.name} and surrounding areas. Call or message on Telegram.`}
+        subtitle={`Available 24/7 across ${loc.name} and surrounding areas. Call or message on WhatsApp.`}
         location={loc.name}
       />
 
