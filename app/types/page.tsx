@@ -46,7 +46,7 @@ export default function TypesPage() {
                 style={{ background: '#0f0000' }}
               >
                 {/* Portrait Image */}
-                <div className="relative w-full overflow-hidden" style={{ aspectRatio: '3/4' }}>
+                <div className="relative w-full h-72 sm:h-80 overflow-hidden">
                   {type.image ? (
                     <Image
                       src={type.image}
