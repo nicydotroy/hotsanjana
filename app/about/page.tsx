@@ -44,23 +44,21 @@ export default function AboutPage() {
       />
 
       {/* ── Mission Section ── */}
-      <section className="py-16 lg:py-20 bg-white">
+      <section className="py-16 lg:py-20" style={{ background: '#0a0a0a' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-gray-900">
+              <h2 className="text-3xl font-bold text-white">
                 Our{' '}
-                <span className="bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent">
-                  Story
-                </span>
+                <span className="gradient-text">Story</span>
               </h2>
-              <p className="text-gray-700 leading-relaxed text-lg">
+              <p className="text-gray-300 leading-relaxed text-lg">
                 Hot Sanjana was founded with a simple vision: to provide premium, professional escort services in Mumbai with an unwavering commitment to client satisfaction, safety, and discretion.
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 Over the years, we have grown to become one of Mumbai&apos;s most trusted escort agencies, serving clients from all walks of life – corporate professionals, tourists, businessmen, and more. Our reputation is built on three core pillars: verified escorts, complete discretion, and 24/7 availability.
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 Today, Hot Sanjana operates across 90+ locations throughout Mumbai, Navi Mumbai, Thane, and beyond – making us the most geographically extensive escort service in the Mumbai Metropolitan Region.
               </p>
             </div>
@@ -69,18 +67,17 @@ export default function AboutPage() {
               {[
                 { stat: '500+', label: 'Verified Escorts', icon: '💎' },
                 { stat: '90+', label: 'Locations Covered', icon: '📍' },
-                { stat: '10K+', label: 'Happy Clients', icon: '❤️' },
+                { stat: '10K+', label: 'Happy Clients', icon: '🔥' },
                 { stat: '24/7', label: 'Always Available', icon: '🕐' },
               ].map((item) => (
                 <div
                   key={item.label}
-                  className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6 text-center border border-pink-100"
+                  className="rounded-2xl p-6 text-center border border-red-900/30 hover:border-red-700/50 transition-colors"
+                  style={{ background: 'linear-gradient(135deg, #140500, #1f0a00)' }}
                 >
                   <div className="text-4xl mb-3">{item.icon}</div>
-                  <div className="text-3xl font-bold bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent mb-1">
-                    {item.stat}
-                  </div>
-                  <p className="text-sm text-gray-600 font-medium">{item.label}</p>
+                  <div className="text-3xl font-bold gradient-text mb-1">{item.stat}</div>
+                  <p className="text-sm text-gray-400 font-medium">{item.label}</p>
                 </div>
               ))}
             </div>
@@ -89,13 +86,11 @@ export default function AboutPage() {
       </section>
 
       {/* ── Values ── */}
-      <section className="py-16 bg-gradient-to-br from-pink-50 to-rose-50">
+      <section className="py-16" style={{ background: '#0d0000' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
+          <h2 className="text-3xl font-bold text-white mb-10 text-center">
             Our{' '}
-            <span className="bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent">
-              Core Values
-            </span>
+            <span className="gradient-text">Core Values</span>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -125,18 +120,19 @@ export default function AboutPage() {
                 desc: 'Safety of both clients and escorts is paramount. We maintain strict health and safety standards.',
               },
               {
-                icon: '❤️',
+                icon: '🔥',
                 title: 'Client Satisfaction',
                 desc: 'Your satisfaction is our mission. We go above and beyond to ensure every experience exceeds expectations.',
               },
             ].map((value) => (
               <div
                 key={value.title}
-                className="bg-white rounded-2xl p-6 border border-pink-100 hover:border-pink-300 hover:shadow-card transition-all duration-300 hover:-translate-y-1"
+                className="rounded-2xl p-6 border border-red-900/30 hover:border-red-700/50 hover:shadow-card transition-all duration-300 hover:-translate-y-1"
+                style={{ background: 'linear-gradient(135deg, #140500, #1f0a00)' }}
               >
                 <div className="text-4xl mb-4">{value.icon}</div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{value.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{value.desc}</p>
+                <h3 className="text-lg font-bold text-white mb-2">{value.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{value.desc}</p>
               </div>
             ))}
           </div>
@@ -144,33 +140,31 @@ export default function AboutPage() {
       </section>
 
       {/* ── Contact Info ── */}
-      <section className="py-16 bg-white">
+      <section className="py-16" style={{ background: '#0a0a0a' }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">
+          <h2 className="text-3xl font-bold text-white mb-8">
             Get in{' '}
-            <span className="bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent">
-              Touch
-            </span>
+            <span className="gradient-text">Touch</span>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="bg-pink-50 rounded-2xl p-6 border border-pink-100">
+            <div className="rounded-2xl p-6 border border-red-900/30 hover:border-red-700/50 transition-colors" style={{ background: 'linear-gradient(135deg, #140500, #1f0a00)' }}>
               <div className="text-3xl mb-3">📞</div>
-              <p className="font-semibold text-gray-900 mb-1">Phone</p>
-              <a href={`tel:${SITE_CONFIG.phone}`} className="text-pink-600 font-bold hover:text-pink-700">
+              <p className="font-semibold text-white mb-1">Phone</p>
+              <a href={`tel:${SITE_CONFIG.phone}`} className="text-red-400 font-bold hover:text-red-300">
                 {SITE_CONFIG.phoneDisplay}
               </a>
             </div>
-            <div className="bg-pink-50 rounded-2xl p-6 border border-pink-100">
+            <div className="rounded-2xl p-6 border border-red-900/30 hover:border-red-700/50 transition-colors" style={{ background: 'linear-gradient(135deg, #140500, #1f0a00)' }}>
               <div className="text-3xl mb-3">💬</div>
-              <p className="font-semibold text-gray-900 mb-1">Telegram</p>
-              <a href={SITE_CONFIG.telegramUrl} target="_blank" rel="noopener noreferrer nofollow" className="text-pink-600 font-bold hover:text-pink-700">
+              <p className="font-semibold text-white mb-1">Telegram</p>
+              <a href={SITE_CONFIG.telegramUrl} target="_blank" rel="noopener noreferrer nofollow" className="text-yellow-400 font-bold hover:text-yellow-300">
                 @{SITE_CONFIG.telegramHandle}
               </a>
             </div>
-            <div className="bg-pink-50 rounded-2xl p-6 border border-pink-100">
+            <div className="rounded-2xl p-6 border border-red-900/30 hover:border-red-700/50 transition-colors" style={{ background: 'linear-gradient(135deg, #140500, #1f0a00)' }}>
               <div className="text-3xl mb-3">✉️</div>
-              <p className="font-semibold text-gray-900 mb-1">Email</p>
-              <a href={`mailto:${SITE_CONFIG.email}`} className="text-pink-600 font-bold hover:text-pink-700 break-all">
+              <p className="font-semibold text-white mb-1">Email</p>
+              <a href={`mailto:${SITE_CONFIG.email}`} className="text-orange-400 font-bold hover:text-orange-300 break-all">
                 {SITE_CONFIG.email}
               </a>
             </div>

@@ -141,12 +141,12 @@ export default function ContactPage() {
       </section>
 
       {/* Service Areas */}
-      <section className="py-12 bg-white border-t border-pink-50">
+      <section className="py-12 border-t border-red-900/20" style={{ background: '#0d0000' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-xl font-bold text-gray-900 mb-4">
-            We Serve All Areas in Mumbai & Beyond
+          <h3 className="text-xl font-bold text-white mb-4">
+            We Serve All Areas in Mumbai &amp; Beyond
           </h3>
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-400 mb-6">
             From South Mumbai to the far suburbs – 90+ locations covered 24/7
           </p>
           <div className="flex flex-wrap justify-center gap-2">
@@ -157,7 +157,8 @@ export default function ContactPage() {
             ].map((area) => (
               <span
                 key={area}
-                className="px-3 py-1.5 bg-pink-50 border border-pink-200 text-pink-700 text-sm rounded-full font-medium"
+                className="px-3 py-1.5 border border-red-900/30 hover:border-red-700/50 text-gray-300 text-sm rounded-full font-medium transition-colors"
+                style={{ background: 'rgba(139, 0, 0, 0.15)' }}
               >
                 📍 {area}
               </span>

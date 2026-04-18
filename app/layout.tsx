@@ -83,7 +83,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="font-sans bg-white antialiased flex flex-col min-h-screen">
+      <body className="font-sans antialiased flex flex-col min-h-screen">
         {/* Adult content disclaimer banner */}
         <div className="bg-gray-900 text-yellow-300 text-center text-xs py-2 px-4 font-medium">
           ⚠️ This site contains adult content. By continuing you confirm you are 18+ years of age.

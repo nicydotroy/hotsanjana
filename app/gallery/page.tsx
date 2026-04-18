@@ -29,16 +29,14 @@ export default function GalleryPage() {
         showStats={false}
       />
 
-      <section className="py-16 lg:py-20 bg-white">
+      <section className="py-16 lg:py-20" style={{ background: '#0a0a0a' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-white mb-4">
               Our{' '}
-              <span className="bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent">
-                Latest Profiles
-              </span>
+              <span className="gradient-text">Latest Profiles</span>
             </h2>
-            <p className="text-gray-600">Contact us directly to view full profiles and availability</p>
+            <p className="text-gray-400">Contact us directly to view full profiles and availability</p>
           </div>
 
           {/* Category filters */}
@@ -48,9 +46,10 @@ export default function GalleryPage() {
                 key={cat}
                 className={`px-5 py-2 rounded-full text-sm font-semibold cursor-pointer border-2 transition-all ${
                   cat === 'All'
-                    ? 'bg-gradient-to-r from-pink-500 to-rose-400 text-white border-pink-500 shadow-pink'
-                    : 'border-pink-200 text-pink-600 hover:border-pink-400 hover:bg-pink-50'
+                    ? 'text-black border-yellow-500'
+                    : 'border-red-900/50 text-gray-300 hover:border-red-600 hover:text-red-300'
                 }`}
+                style={cat === 'All' ? { background: 'linear-gradient(135deg, #cc9900, #ffd700)', boxShadow: '0 0 20px rgba(255,215,0,0.4)' } : {}}
               >
                 {cat}
               </span>
@@ -62,18 +61,25 @@ export default function GalleryPage() {
             {galleryItems.map((item) => (
               <div
                 key={item.id}
-                className="group relative aspect-[3/4] bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl overflow-hidden cursor-pointer hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 border border-pink-100 hover:border-pink-300"
+                className="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 border border-red-900/30 hover:border-red-700/50"
+                style={{ background: 'linear-gradient(135deg, #1a0500, #2a0800)' }}
               >
                 {/* Placeholder – replace with actual images */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-pink-400 to-rose-400 flex items-center justify-center text-3xl mb-3 shadow-lg">
-                    💋
+                  <div
+                    className="w-16 h-16 rounded-full flex items-center justify-center text-3xl mb-3"
+                    style={{ background: 'linear-gradient(135deg, #8b0000, #dc0000)', boxShadow: '0 0 20px rgba(220,0,0,0.4)' }}
+                  >
+                    🔥
                   </div>
-                  <p className="text-pink-700 font-semibold text-sm">Profile {item.id}</p>
+                  <p className="text-red-400 font-semibold text-sm">Profile {item.id}</p>
                 </div>
 
                 {/* Category badge */}
-                <div className="absolute top-3 left-3 bg-gradient-to-r from-pink-500 to-rose-400 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                <div
+                  className="absolute top-3 left-3 text-black text-xs font-bold px-3 py-1 rounded-full shadow"
+                  style={{ background: 'linear-gradient(135deg, #cc9900, #ffd700)' }}
+                >
                   {item.category}
                 </div>
 
@@ -91,13 +97,10 @@ export default function GalleryPage() {
           </div>
 
           <div className="text-center mt-10">
-            <p className="text-gray-600 mb-5 text-lg">
+            <p className="text-gray-400 mb-5 text-lg">
               📲 Want to see more profiles? Contact us directly for the latest available escorts.
             </p>
-            <a
-              href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-500 to-rose-400 text-white font-bold rounded-full hover:shadow-pink-lg hover:-translate-y-0.5 transition-all"
-            >
+            <a href="/contact" className="btn-primary">
               View All Profiles
             </a>
           </div>

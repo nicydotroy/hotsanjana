@@ -123,26 +123,24 @@ export default async function EscortLocationPage({ params }: PageProps) {
       />
 
       {/* ── About This Location ── */}
-      <section className="py-16 bg-white">
+      <section className="py-16" style={{ background: '#0a0a0a' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             <div className="lg:col-span-2">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-5">
+              <h2 className="text-2xl lg:text-3xl font-bold text-white mb-5">
                 Premium Escort Service in{' '}
-                <span className="bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent">
-                  {loc.name}
-                </span>
+                <span className="gradient-text">{loc.name}</span>
               </h2>
-              <div className="prose prose-lg text-gray-700 space-y-4">
-                <p>
+              <div className="space-y-4">
+                <p className="text-gray-300 leading-relaxed text-lg">
                   {loc.uniqueContent}
                 </p>
-                <p>
+                <p className="text-gray-300 leading-relaxed">
                   Hot Sanjana provides {loc.name}&apos;s most trusted escort service, connecting discerning
                   clients with verified, professional companions. Whether you&apos;re visiting {loc.name} for
                   business or pleasure, our escorts ensure an unforgettable experience tailored to your preferences.
                 </p>
-                <p>
+                <p className="text-gray-300 leading-relaxed">
                   All our escorts in {loc.name} are independently verified, professionally trained, and committed
                   to absolute discretion. We serve clients in {loc.name} and surrounding areas including{' '}
                   {loc.nearbyAreas.slice(0, 4).join(', ')}.
@@ -152,14 +150,15 @@ export default async function EscortLocationPage({ params }: PageProps) {
               {/* Landmarks */}
               {loc.landmarks && loc.landmarks.length > 0 && (
                 <div className="mt-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  <h3 className="text-lg font-semibold text-white mb-3">
                     Near Popular Landmarks in {loc.name}
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {loc.landmarks.map((landmark) => (
                       <span
                         key={landmark}
-                        className="px-3 py-1.5 bg-pink-50 border border-pink-200 text-pink-700 text-sm rounded-full font-medium"
+                        className="px-3 py-1.5 border border-red-900/30 text-gray-300 text-sm rounded-full font-medium"
+                        style={{ background: 'rgba(139, 0, 0, 0.15)' }}
                       >
                         📍 {landmark}
                       </span>
@@ -171,38 +170,41 @@ export default async function EscortLocationPage({ params }: PageProps) {
 
             {/* Booking Panel */}
             <div className="lg:col-span-1">
-              <div className="sticky top-24 bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6 border border-pink-200 shadow-card">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+              <div
+                className="sticky top-24 lg:top-40 rounded-2xl p-6 border border-red-900/30"
+                style={{ background: 'linear-gradient(135deg, #0f0300, #1a0800)' }}
+              >
+                <h3 className="text-xl font-bold text-white mb-2">
                   Book Escorts in {loc.name}
                 </h3>
-                <p className="text-gray-600 text-sm mb-5">
+                <p className="text-gray-400 text-sm mb-5">
                   24/7 available. Instant confirmation.
                 </p>
 
                 <BookingButtons location={loc.name} size="md" layout="col" />
 
-                <div className="mt-5 space-y-2 text-sm text-gray-600">
+                <div className="mt-5 space-y-2 text-sm text-gray-400">
                   <div className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>
+                    <span className="text-red-400">✓</span>
                     <span>100% Verified Profiles</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>
+                    <span className="text-red-400">✓</span>
                     <span>Complete Discretion</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>
-                    <span>Incall & Outcall Available</span>
+                    <span className="text-red-400">✓</span>
+                    <span>Incall &amp; Outcall Available</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>
+                    <span className="text-red-400">✓</span>
                     <span>Available 24/7</span>
                   </div>
                 </div>
 
                 {/* Nearby areas */}
                 {nearbyLocations.length > 0 && (
-                  <div className="mt-6 pt-5 border-t border-pink-200">
+                  <div className="mt-6 pt-5 border-t border-red-900/30">
                     <p className="text-xs font-semibold text-gray-500 mb-2 uppercase tracking-wider">
                       Nearby Locations
                     </p>
@@ -211,7 +213,8 @@ export default async function EscortLocationPage({ params }: PageProps) {
                         <a
                           key={l.slug}
                           href={`/escorts/${l.slug}`}
-                          className="text-xs px-2.5 py-1 bg-white text-pink-600 border border-pink-200 rounded-full hover:border-pink-400 hover:bg-pink-50 transition-colors"
+                          className="text-xs px-2.5 py-1 border border-red-900/30 text-gray-400 rounded-full hover:border-red-700/50 hover:text-red-400 transition-colors"
+                          style={{ background: 'rgba(139, 0, 0, 0.1)' }}
                         >
                           {l.name}
                         </a>
@@ -226,13 +229,11 @@ export default async function EscortLocationPage({ params }: PageProps) {
       </section>
 
       {/* ── Services Available ── */}
-      <section className="py-14 bg-gradient-to-br from-pink-50 to-rose-50">
+      <section className="py-14" style={{ background: '#0d0000' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+          <h2 className="text-2xl font-bold text-white mb-8 text-center">
             Services Available in{' '}
-            <span className="bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent">
-              {loc.name}
-            </span>
+            <span className="gradient-text">{loc.name}</span>
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
@@ -247,10 +248,11 @@ export default async function EscortLocationPage({ params }: PageProps) {
             ].map((svc) => (
               <div
                 key={svc.label}
-                className="bg-white rounded-xl p-4 text-center border border-pink-100 hover:border-pink-300 hover:shadow-card transition-all hover:-translate-y-0.5"
+                className="rounded-xl p-4 text-center border border-red-900/30 hover:border-red-700/50 hover:shadow-card transition-all hover:-translate-y-0.5"
+                style={{ background: 'linear-gradient(135deg, #140500, #1f0a00)' }}
               >
                 <div className="text-3xl mb-2">{svc.icon}</div>
-                <p className="text-sm font-semibold text-gray-800">{svc.label}</p>
+                <p className="text-sm font-semibold text-gray-300">{svc.label}</p>
               </div>
             ))}
           </div>

@@ -112,28 +112,26 @@ export default async function CallGirlsLocationPage({ params }: PageProps) {
       />
 
       {/* ── Main Content ── */}
-      <section className="py-16 bg-white">
+      <section className="py-16" style={{ background: '#0a0a0a' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             <div className="lg:col-span-2 space-y-6">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">
+              <h2 className="text-2xl lg:text-3xl font-bold text-white">
                 Call Girls Available in{' '}
-                <span className="bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent">
-                  {loc.name}
-                </span>
+                <span className="gradient-text">{loc.name}</span>
               </h2>
 
-              <p className="text-gray-700 leading-relaxed text-lg">
+              <p className="text-gray-300 leading-relaxed text-lg">
                 {loc.uniqueContent}
               </p>
 
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 Hot Sanjana is {loc.name}&apos;s most reliable call girl service, known for verified profiles,
                 professional behavior, and complete discretion. Our call girls in {loc.name} are available
                 for both short-duration and long-duration bookings, including overnight stays.
               </p>
 
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 We service all areas within {loc.name} as well as neighboring areas like{' '}
                 {loc.nearbyAreas.slice(0, 5).join(', ')}. Our dedicated team is on call 24/7 to ensure
                 you get the best companionship experience possible.
@@ -149,9 +147,13 @@ export default async function CallGirlsLocationPage({ params }: PageProps) {
                   { icon: '🏨', text: 'Hotel Delivery' },
                   { icon: '💳', text: 'Easy Payment Options' },
                 ].map((item) => (
-                  <div key={item.text} className="flex items-center gap-3 p-3 bg-pink-50 rounded-xl border border-pink-100">
+                  <div
+                    key={item.text}
+                    className="flex items-center gap-3 p-3 rounded-xl border border-red-900/30"
+                    style={{ background: 'rgba(139, 0, 0, 0.1)' }}
+                  >
                     <span className="text-lg">{item.icon}</span>
-                    <span className="text-sm font-medium text-gray-800">{item.text}</span>
+                    <span className="text-sm font-medium text-gray-300">{item.text}</span>
                   </div>
                 ))}
               </div>
@@ -159,12 +161,16 @@ export default async function CallGirlsLocationPage({ params }: PageProps) {
               {/* Landmarks */}
               {loc.landmarks && loc.landmarks.length > 0 && (
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  <h3 className="text-lg font-semibold text-white mb-3">
                     We serve near these landmarks in {loc.name}:
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {loc.landmarks.map((lm) => (
-                      <span key={lm} className="px-3 py-1.5 bg-pink-50 border border-pink-200 text-pink-700 text-sm rounded-full">
+                      <span
+                        key={lm}
+                        className="px-3 py-1.5 border border-red-900/30 text-gray-300 text-sm rounded-full"
+                        style={{ background: 'rgba(139, 0, 0, 0.15)' }}
+                      >
                         📍 {lm}
                       </span>
                     ))}
@@ -175,27 +181,30 @@ export default async function CallGirlsLocationPage({ params }: PageProps) {
 
             {/* Booking Sidebar */}
             <div className="lg:col-span-1">
-              <div className="sticky top-24 bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6 border border-pink-200 shadow-card">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+              <div
+                className="sticky top-24 lg:top-40 rounded-2xl p-6 border border-red-900/30"
+                style={{ background: 'linear-gradient(135deg, #0f0300, #1a0800)' }}
+              >
+                <h3 className="text-xl font-bold text-white mb-2">
                   Book a Call Girl in {loc.name}
                 </h3>
-                <p className="text-gray-600 text-sm mb-5">
+                <p className="text-gray-400 text-sm mb-5">
                   24/7 service. Instant confirmation.
                 </p>
 
                 <BookingButtons location={loc.name} size="md" layout="col" />
 
-                <div className="mt-5 space-y-2 text-sm text-gray-600">
+                <div className="mt-5 space-y-2 text-sm text-gray-400">
                   {['Verified Call Girls', 'Incall & Outcall', '100% Confidential', 'No Hidden Charges'].map((item) => (
                     <div key={item} className="flex items-center gap-2">
-                      <span className="text-green-500 font-bold">✓</span>
+                      <span className="text-red-400 font-bold">✓</span>
                       <span>{item}</span>
                     </div>
                   ))}
                 </div>
 
                 {nearbyLocations.length > 0 && (
-                  <div className="mt-5 pt-5 border-t border-pink-200">
+                  <div className="mt-5 pt-5 border-t border-red-900/30">
                     <p className="text-xs font-semibold text-gray-500 mb-2 uppercase tracking-wider">
                       Nearby Areas
                     </p>
@@ -204,7 +213,8 @@ export default async function CallGirlsLocationPage({ params }: PageProps) {
                         <a
                           key={l.slug}
                           href={`/call-girls/${l.slug}`}
-                          className="text-xs px-2.5 py-1 bg-white text-pink-600 border border-pink-200 rounded-full hover:border-pink-400 hover:bg-pink-50 transition-colors"
+                          className="text-xs px-2.5 py-1 border border-red-900/30 text-gray-400 rounded-full hover:border-red-700/50 hover:text-red-400 transition-colors"
+                          style={{ background: 'rgba(139, 0, 0, 0.1)' }}
                         >
                           {l.name}
                         </a>

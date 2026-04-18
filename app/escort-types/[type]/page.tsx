@@ -78,29 +78,28 @@ export default async function EscortTypePage({ params }: PageProps) {
       />
 
       {/* ── Main Content ── */}
-      <section className="py-16 bg-white">
+      <section className="py-16" style={{ background: '#0a0a0a' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             <div className="lg:col-span-2 space-y-6">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">
+              <h2 className="text-2xl lg:text-3xl font-bold text-white">
                 About{' '}
-                <span className="bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent">
-                  {escortType.name}
-                </span>
+                <span className="gradient-text">{escortType.name}</span>
               </h2>
-              <p className="text-gray-700 leading-relaxed text-lg">{escortType.longDescription}</p>
+              <p className="text-gray-300 leading-relaxed text-lg">{escortType.longDescription}</p>
 
               {escortType.features && escortType.features.length > 0 && (
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">What to Expect</h3>
+                  <h3 className="text-xl font-bold text-white mb-4">What to Expect</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {escortType.features.map((feature) => (
                       <div
                         key={feature}
-                        className="flex items-center gap-3 p-4 bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl border border-pink-100"
+                        className="flex items-center gap-3 p-4 rounded-xl border border-red-900/30"
+                        style={{ background: 'rgba(139, 0, 0, 0.1)' }}
                       >
-                        <span className="text-pink-500 font-bold">✓</span>
-                        <span className="text-gray-800 text-sm font-medium">{feature}</span>
+                        <span className="text-red-400 font-bold">✓</span>
+                        <span className="text-gray-300 text-sm font-medium">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -110,16 +109,19 @@ export default async function EscortTypePage({ params }: PageProps) {
 
             {/* Booking Panel */}
             <div className="lg:col-span-1">
-              <div className="sticky top-24 bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6 border border-pink-200 shadow-card">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Book {escortType.name}</h3>
-                <p className="text-gray-600 text-sm mb-5">
+              <div
+                className="sticky top-24 lg:top-40 rounded-2xl p-6 border border-red-900/30"
+                style={{ background: 'linear-gradient(135deg, #0f0300, #1a0800)' }}
+              >
+                <h3 className="text-xl font-bold text-white mb-2">Book {escortType.name}</h3>
+                <p className="text-gray-400 text-sm mb-5">
                   Available 24/7 across Mumbai. Instant confirmation.
                 </p>
                 <BookingButtons type={escortType.name} size="md" layout="col" />
-                <div className="mt-5 space-y-2 text-sm text-gray-600">
+                <div className="mt-5 space-y-2 text-sm text-gray-400">
                   {['Verified Profiles', 'Fully Discreet', 'Incall & Outcall', 'All Mumbai Areas'].map((item) => (
                     <div key={item} className="flex items-center gap-2">
-                      <span className="text-green-500">✓</span>
+                      <span className="text-red-400">✓</span>
                       <span>{item}</span>
                     </div>
                   ))}
@@ -131,13 +133,11 @@ export default async function EscortTypePage({ params }: PageProps) {
       </section>
 
       {/* ── Other Types ── */}
-      <section className="py-14 bg-gradient-to-br from-pink-50 to-rose-50">
+      <section className="py-14" style={{ background: '#0d0000' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+          <h2 className="text-2xl font-bold text-white mb-6 text-center">
             Explore Other{' '}
-            <span className="bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent">
-              Escort Categories
-            </span>
+            <span className="gradient-text">Escort Categories</span>
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {escortTypes
@@ -146,10 +146,11 @@ export default async function EscortTypePage({ params }: PageProps) {
                 <Link
                   key={t.slug}
                   href={`/escort-types/${t.slug}`}
-                  className="bg-white rounded-xl p-4 text-center border border-pink-100 hover:border-pink-300 hover:shadow-card hover:-translate-y-1 transition-all duration-300"
+                  className="rounded-xl p-4 text-center border border-red-900/30 hover:border-red-700/50 hover:shadow-card hover:-translate-y-1 transition-all duration-300"
+                  style={{ background: 'linear-gradient(135deg, #140500, #1f0a00)' }}
                 >
                   <div className="text-3xl mb-2">{t.icon}</div>
-                  <p className="text-sm font-semibold text-gray-800 group-hover:text-pink-600">{t.name}</p>
+                  <p className="text-sm font-semibold text-gray-300 hover:text-red-400">{t.name}</p>
                 </Link>
               ))}
           </div>
