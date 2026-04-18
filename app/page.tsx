@@ -144,7 +144,7 @@ export default function HomePage() {
                 style={{ boxShadow: '0 0 80px rgba(220,0,0,0.35), 0 20px 60px rgba(0,0,0,0.8)' }}
               >
                 <Image
-                  src="/images/escort-types/vip-escorts-mumbai.webp"
+                  src="/images/categories/vip-escorts-mumbai.webp"
                   alt="Premium Escorts Mumbai – Hot Sanjana"
                   fill
                   className="object-cover object-top"

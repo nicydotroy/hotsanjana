@@ -11,6 +11,10 @@ export interface Location {
   uniqueContent: string
 }
 
+export function getLocationImage(slug: string): string {
+  return `/images/escorts/escorts-${slug}.webp`
+}
+
 export const locations: Location[] = [
   {
     slug: 'mumbai',
