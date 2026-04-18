@@ -132,7 +132,7 @@ export default function LocationGrid({
         {/* ── Mumbai ── */}
         <div className="mb-10">
           <AreaHeading emoji="🌆" label="Mumbai" count={mumbaiLocs.length} />
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
             {mumbaiLocs.map((loc) => (
               <LocationCard key={loc.slug} loc={loc} prefix={prefix} />
             ))}
@@ -142,7 +142,7 @@ export default function LocationGrid({
         {/* ── Navi Mumbai ── */}
         <div className="mb-10">
           <AreaHeading emoji="🏙️" label="Navi Mumbai" count={naviMumbaiLocs.length} />
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
             {naviMumbaiLocs.map((loc) => (
               <LocationCard key={loc.slug} loc={loc} prefix={prefix} />
             ))}
@@ -152,7 +152,7 @@ export default function LocationGrid({
         {/* ── Thane & Nearby ── */}
         <div className="mb-10">
           <AreaHeading emoji="🏘️" label="Thane & Nearby" count={thaneLocs.length} />
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
             {thaneLocs.map((loc) => (
               <LocationCard key={loc.slug} loc={loc} prefix={prefix} />
             ))}
@@ -163,7 +163,7 @@ export default function LocationGrid({
         {otherMetroLocs.length > 0 && (
           <div>
             <AreaHeading emoji="✈️" label="Other Metro Cities" count={otherMetroLocs.length} />
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
               {otherMetroLocs.map((loc) => (
                 <LocationCard key={loc.slug} loc={loc} prefix={prefix} />
               ))}
