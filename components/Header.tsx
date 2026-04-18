@@ -41,11 +41,11 @@ export default function Header() {
       <div className="fire-divider" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 md:h-24">
+        <div className="flex items-center justify-between h-40 md:h-48">
 
           {/* Logo */}
           <Link href="/" className="flex items-center group flex-shrink-0">
-            <div className="relative w-20 h-20 md:w-24 md:h-24 transition-transform duration-300 group-hover:scale-110">
+            <div className="relative w-40 h-40 md:w-48 md:h-48 transition-transform duration-300 group-hover:scale-110">
               <Image
                 src="/logo.png"
                 alt="Hot Sanjana Logo"
