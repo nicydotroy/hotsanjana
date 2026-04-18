@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { locations, type Location, getLocationImage } from '@/data/locations'
+import { SITE_CONFIG } from '@/data/services'
 
 interface LocationGridProps {
   title?: string
@@ -33,26 +34,50 @@ const otherMetroLocs = locations.filter((l) => otherMetroSlugs.has(l.slug))
 // ── Reusable card ─────────────────────────────────────────────────────────────
 function LocationCard({ loc, prefix }: { loc: Location; prefix: string }) {
   return (
-    <Link
-      href={`${prefix}/${loc.slug}`}
-      className="group relative overflow-hidden rounded-xl border border-red-900/40 hover:border-red-500/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_6px_24px_rgba(220,0,0,0.35)]"
+    <div
+      className="group rounded-2xl overflow-hidden border border-red-900/40 hover:border-red-500/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(220,0,0,0.3)]"
       style={{ background: '#0d0000' }}
     >
-      <div className="relative h-40 sm:h-44 overflow-hidden">
-        <Image
-          src={getLocationImage(loc.slug)}
-          alt={`Escorts in ${loc.name}`}
-          fill
-          className="object-cover object-top group-hover:scale-110 transition-transform duration-500"
-          sizes="(max-width:640px) 50vw, (max-width:1024px) 25vw, 17vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-2.5">
-          <span className="text-white text-xs font-bold leading-tight block truncate">{loc.name}</span>
-          <span className="text-orange-400 text-[10px] block truncate">{loc.area}</span>
+      <Link href={`${prefix}/${loc.slug}`} className="block">
+        <div className="relative h-[220px] sm:h-52 overflow-hidden">
+          <Image
+            src={getLocationImage(loc.slug)}
+            alt={`Escorts in ${loc.name}`}
+            fill
+            className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+            sizes="(max-width:640px) 50vw, (max-width:1024px) 25vw, 17vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 to-transparent">
+            <h3 className="text-white font-bold text-sm leading-tight group-hover:text-red-400 transition-colors truncate">
+              {loc.name}
+            </h3>
+            <p className="text-orange-400 text-[11px] mt-0.5 truncate">{loc.area}</p>
+          </div>
         </div>
+      </Link>
+      <div className="px-3 pb-4 pt-2 grid grid-cols-2 gap-2">
+        <a
+          href={`tel:${SITE_CONFIG.phone}`}
+          className="flex items-center justify-center gap-1 text-[11px] sm:text-xs font-bold py-2 rounded-full text-white hover:-translate-y-0.5 transition-transform"
+          style={{ background: 'linear-gradient(135deg, #8b0000, #dc0000)' }}
+          rel="nofollow"
+          aria-label={`Call to book escorts in ${loc.name}`}
+        >
+          📞 Call Now
+        </a>
+        <a
+          href={SITE_CONFIG.whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          className="flex items-center justify-center gap-1 text-[11px] sm:text-xs font-bold py-2 rounded-full text-black hover:-translate-y-0.5 transition-transform"
+          style={{ background: 'linear-gradient(135deg, #25D366, #128C7E)', color: '#fff' }}
+          aria-label={`WhatsApp to book escorts in ${loc.name}`}
+        >
+          💬 WhatsApp
+        </a>
       </div>
-    </Link>
+    </div>
   )
 }
 
