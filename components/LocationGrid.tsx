@@ -20,49 +20,69 @@ export default function LocationGrid({
   const displayLocations = showAll ? locations : locations.slice(0, limit)
   const prefix = type === 'call-girls' ? '/call-girls' : '/escorts'
 
-  const areaColors: Record<string, string> = {
-    'South Mumbai': 'from-purple-500 to-pink-500',
-    'Western Suburbs': 'from-pink-500 to-rose-400',
-    'Eastern Suburbs': 'from-rose-500 to-orange-400',
-    'Navi Mumbai': 'from-blue-500 to-teal-400',
-    'Thane District': 'from-teal-500 to-green-400',
-    'Vasai-Virar District': 'from-orange-500 to-yellow-400',
-    'Palghar District': 'from-yellow-500 to-green-400',
-    default: 'from-pink-500 to-rose-400',
+  const areaGlows: Record<string, string> = {
+    'South Mumbai':        'rgba(220, 0, 0, 0.7)',
+    'Western Suburbs':     'rgba(255, 69, 0, 0.7)',
+    'Eastern Suburbs':     'rgba(255, 140, 0, 0.7)',
+    'Navi Mumbai':         'rgba(255, 215, 0, 0.7)',
+    'Thane District':      'rgba(204, 153, 0, 0.7)',
+    'Vasai-Virar District':'rgba(139, 0, 0, 0.7)',
+    'Palghar District':    'rgba(255, 102, 0, 0.7)',
+    default:               'rgba(220, 0, 0, 0.7)',
   }
 
   return (
-    <section className="py-16 lg:py-20 bg-gradient-to-br from-pink-50 to-rose-50">
+    <section className="py-16 lg:py-20 section-darker">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            <span className="bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent">
+          <p className="text-sm font-bold tracking-[0.3em] text-red-500 uppercase mb-3">Serving All Areas</p>
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+            <span
+              style={{
+                background: 'linear-gradient(135deg, #dc0000, #ff6600, #ffd700)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
               {title}
             </span>
           </h2>
+          <div className="fire-divider max-w-xs mx-auto mb-4 opacity-50" />
           {subtitle && (
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">{subtitle}</p>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">{subtitle}</p>
           )}
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
           {displayLocations.map((loc) => {
-            const gradient = areaColors[loc.area] || areaColors.default
+            const glowColor = areaGlows[loc.area] || areaGlows.default
             return (
               <Link
                 key={loc.slug}
                 href={`${prefix}/${loc.slug}`}
-                className="group relative overflow-hidden rounded-xl bg-white p-3.5 text-center shadow-sm hover:shadow-card-hover border border-pink-100 hover:border-pink-300 transition-all duration-300 hover:-translate-y-1"
+                className="group relative overflow-hidden rounded-xl p-3.5 text-center border transition-all duration-300 hover:-translate-y-1"
+                style={{
+                  background: 'linear-gradient(135deg, #120500, #1a0800)',
+                  borderColor: 'rgba(139, 0, 0, 0.25)',
+                }}
               >
+                {/* Hover glow effect */}
                 <div
-                  className={`w-8 h-8 rounded-full bg-gradient-to-br ${gradient} flex items-center justify-center mx-auto mb-2.5 group-hover:scale-110 transition-transform shadow-sm`}
+                  className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                  style={{ background: `radial-gradient(circle at 50% 0%, ${glowColor.replace('0.7', '0.08')} 0%, transparent 70%)` }}
+                />
+
+                <div
+                  className="w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-2.5 group-hover:scale-110 transition-transform shadow-sm"
+                  style={{ background: `linear-gradient(135deg, #8b0000, #dc0000)` }}
                 >
                   <MapPin size={14} className="text-white" />
                 </div>
-                <span className="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-pink-600 transition-colors leading-tight block">
+                <span className="text-xs sm:text-sm font-semibold text-gray-300 group-hover:text-orange-300 transition-colors leading-tight block">
                   {loc.name}
                 </span>
-                <span className="text-xs text-gray-400 mt-1 block truncate">{loc.area}</span>
+                <span className="text-xs text-gray-600 mt-1 block truncate">{loc.area}</span>
               </Link>
             )
           })}
@@ -72,7 +92,11 @@ export default function LocationGrid({
           <div className="text-center mt-8">
             <Link
               href="/location"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-pink-500 to-rose-400 text-white font-semibold rounded-full hover:shadow-pink-lg hover:-translate-y-0.5 transition-all duration-200"
+              className="inline-flex items-center gap-2 px-8 py-3 font-bold text-white rounded-full hover:-translate-y-0.5 transition-all duration-200"
+              style={{
+                background: 'linear-gradient(135deg, #8b0000, #dc0000, #ff4500)',
+                boxShadow: '0 4px 20px rgba(220, 0, 0, 0.4)',
+              }}
             >
               View All {locations.length} Locations
             </Link>

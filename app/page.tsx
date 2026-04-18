@@ -80,16 +80,25 @@ export default function HomePage() {
       />
 
       {/* ── Escort Types / Services Grid ── */}
-      <section className="py-16 lg:py-20 bg-gradient-to-br from-white to-pink-50/40">
+      <section className="py-16 lg:py-20 section-darker">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <p className="text-sm font-bold tracking-[0.3em] text-red-500 uppercase mb-3">Premium Selection</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               Our{' '}
-              <span className="bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent">
+              <span
+                style={{
+                  background: 'linear-gradient(135deg, #dc0000, #ff6600, #ffd700)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
                 Escort Categories
               </span>
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <div className="fire-divider max-w-xs mx-auto mb-4 opacity-50" />
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               Choose from our wide selection of premium escort categories, all thoroughly verified and professionally available
             </p>
           </div>
@@ -118,16 +127,25 @@ export default function HomePage() {
       />
 
       {/* ── Testimonials ── */}
-      <section className="py-16 lg:py-20 bg-white">
+      <section className="py-16 lg:py-20 section-darker">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <p className="text-sm font-bold tracking-[0.3em] text-red-500 uppercase mb-3">Client Reviews</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               What Our{' '}
-              <span className="bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent">
+              <span
+                style={{
+                  background: 'linear-gradient(135deg, #dc0000, #ff6600, #ffd700)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
                 Clients Say
               </span>
             </h2>
-            <p className="text-gray-600 text-lg">
+            <div className="fire-divider max-w-xs mx-auto mb-4 opacity-50" />
+            <p className="text-gray-500 text-lg">
               Join thousands of satisfied clients who trust Hot Sanjana
             </p>
           </div>
@@ -136,21 +154,29 @@ export default function HomePage() {
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6 border border-pink-100 hover:border-pink-200 hover:shadow-card transition-all duration-300"
+                className="rounded-2xl p-6 border hover:border-red-700/50 transition-all duration-300 hover:-translate-y-1"
+                style={{
+                  background: 'linear-gradient(135deg, #120500, #1a0800)',
+                  borderColor: 'rgba(139, 0, 0, 0.3)',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
+                }}
               >
                 <div className="flex items-center gap-1 mb-4">
                   {Array.from({ length: 5 }).map((_, s) => (
                     <span key={s} className="text-yellow-400 text-lg">★</span>
                   ))}
                 </div>
-                <p className="text-gray-700 leading-relaxed mb-5 italic">&ldquo;{t.text}&rdquo;</p>
+                <p className="text-gray-400 leading-relaxed mb-5 italic">&ldquo;{t.text}&rdquo;</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-rose-400 flex items-center justify-center text-white font-bold text-sm shadow-sm">
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm"
+                    style={{ background: 'linear-gradient(135deg, #8b0000, #dc0000)' }}
+                  >
                     {t.name.charAt(0)}
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900 text-sm">{t.name}</p>
-                    <p className="text-xs text-gray-500">{t.location} · {t.date}</p>
+                    <p className="font-semibold text-white text-sm">{t.name}</p>
+                    <p className="text-xs text-gray-600">{t.location} · {t.date}</p>
                   </div>
                 </div>
               </div>

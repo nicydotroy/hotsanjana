@@ -32,27 +32,31 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
       />
       <nav
         aria-label="Breadcrumb navigation"
-        className="bg-white/80 backdrop-blur-sm border-b border-pink-100 py-3"
+        className="backdrop-blur-sm border-b py-3"
+        style={{
+          background: 'rgba(10, 0, 0, 0.90)',
+          borderColor: 'rgba(139, 0, 0, 0.3)',
+        }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ol className="flex items-center gap-2 flex-wrap text-sm">
             {allItems.map((item, index) => (
               <li key={index} className="flex items-center gap-2">
                 {index > 0 && (
-                  <ChevronRight size={14} className="text-pink-300 flex-shrink-0" />
+                  <ChevronRight size={14} className="text-red-800 flex-shrink-0" />
                 )}
                 {index === 0 && (
-                  <Home size={14} className="text-pink-500 flex-shrink-0" />
+                  <Home size={14} className="text-red-500 flex-shrink-0" />
                 )}
                 {item.href && index < allItems.length - 1 ? (
                   <Link
                     href={item.href}
-                    className="text-pink-600 hover:text-pink-700 hover:underline font-medium transition-colors"
+                    className="text-red-400 hover:text-orange-400 hover:underline font-medium transition-colors"
                   >
                     {item.label}
                   </Link>
                 ) : (
-                  <span className="text-gray-700 font-semibold">{item.label}</span>
+                  <span className="text-gray-300 font-semibold">{item.label}</span>
                 )}
               </li>
             ))}

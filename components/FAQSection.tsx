@@ -44,16 +44,23 @@ export default function FAQSection({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       )}
-      <section className="py-16 lg:py-20 bg-white">
+      <section className="py-16 lg:py-20 section-fire-subtle">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              <span className="bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+              <span
+                style={{
+                  background: 'linear-gradient(135deg, #dc0000, #ff6600, #ffd700)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
                 {title}
               </span>
             </h2>
             {subtitle && (
-              <p className="text-gray-600 text-lg">{subtitle}</p>
+              <p className="text-gray-400 text-lg">{subtitle}</p>
             )}
           </div>
 
@@ -61,17 +68,27 @@ export default function FAQSection({
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="border border-pink-100 rounded-2xl overflow-hidden bg-gradient-to-r from-white to-pink-50/30 hover:border-pink-300 transition-colors"
+                className="rounded-2xl overflow-hidden border transition-colors"
+                style={{
+                  background: 'linear-gradient(135deg, #120500, #1a0800)',
+                  borderColor: openIndex === index ? 'rgba(220, 0, 0, 0.5)' : 'rgba(139, 0, 0, 0.25)',
+                }}
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   className="w-full flex items-center justify-between p-5 text-left group"
                   aria-expanded={openIndex === index}
                 >
-                  <span className="font-semibold text-gray-900 text-base pr-4 group-hover:text-pink-700 transition-colors">
+                  <span className="font-semibold text-white text-base pr-4 group-hover:text-orange-300 transition-colors">
                     {faq.question}
                   </span>
-                  <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 ${openIndex === index ? 'bg-pink-500 text-white' : 'bg-pink-100 text-pink-600'}`}>
+                  <div
+                    className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200"
+                    style={{
+                      background: openIndex === index ? 'linear-gradient(135deg, #8b0000, #dc0000)' : 'rgba(139, 0, 0, 0.2)',
+                      color: openIndex === index ? '#ffffff' : '#ff4500',
+                    }}
+                  >
                     {openIndex === index ? (
                       <ChevronUp size={18} />
                     ) : (
@@ -84,7 +101,7 @@ export default function FAQSection({
                     openIndex === index ? 'max-h-96' : 'max-h-0'
                   }`}
                 >
-                  <p className="px-5 pb-5 text-gray-600 leading-relaxed border-t border-pink-100 pt-4">
+                  <p className="px-5 pb-5 text-gray-400 leading-relaxed border-t border-red-900/30 pt-4">
                     {faq.answer}
                   </p>
                 </div>

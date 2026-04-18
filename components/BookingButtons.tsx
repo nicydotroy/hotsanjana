@@ -33,7 +33,11 @@ export default function BookingButtons({
     >
       <a
         href={`tel:${SITE_CONFIG.phone}`}
-        className={`flex items-center justify-center font-semibold rounded-full transition-all duration-200 hover:-translate-y-0.5 ${sizeClasses[size]} bg-gradient-to-r from-pink-500 to-rose-400 text-white shadow-pink hover:shadow-pink-lg`}
+        className={`flex items-center justify-center font-bold rounded-full transition-all duration-200 hover:-translate-y-0.5 text-white ${sizeClasses[size]}`}
+        style={{
+          background: 'linear-gradient(135deg, #8b0000, #dc0000, #ff4500)',
+          boxShadow: '0 4px 20px rgba(220, 0, 0, 0.4)',
+        }}
         rel="nofollow"
         aria-label={`Call to book ${service}`}
       >
@@ -44,7 +48,11 @@ export default function BookingButtons({
         href={`${SITE_CONFIG.telegramUrl}?text=${encodeURIComponent(telegramText)}`}
         target="_blank"
         rel="noopener noreferrer nofollow"
-        className={`flex items-center justify-center font-semibold rounded-full border-2 transition-all duration-200 hover:-translate-y-0.5 ${sizeClasses[size]} border-pink-500 text-pink-600 bg-white hover:bg-pink-50 hover:shadow-pink`}
+        className={`flex items-center justify-center font-bold rounded-full transition-all duration-200 hover:-translate-y-0.5 text-black ${sizeClasses[size]}`}
+        style={{
+          background: 'linear-gradient(135deg, #cc9900, #ffd700, #ff8c1a)',
+          boxShadow: '0 4px 20px rgba(255, 215, 0, 0.3)',
+        }}
         aria-label={`Telegram to book ${service}`}
       >
         <MessageCircle size={iconSize} />
