@@ -28,6 +28,54 @@ const aboutFaqs = [
     question: 'What areas do you serve?',
     answer: 'We cover all of Mumbai (South Mumbai to the suburbs), Navi Mumbai, Thane, Vasai-Virar, Palghar, and even Pune. With 90+ locations, we can serve you almost anywhere in the Mumbai Metropolitan Region.',
   },
+  {
+    question: 'What makes Hot Sanjana different from other escort agencies in Mumbai?',
+    answer: 'Hot Sanjana stands apart through 10+ years of trust, 500+ genuinely verified escorts, 90+ location coverage, and a 24/7 dedicated booking team. We offer real photos, transparent pricing, and a no-compromise discretion policy.',
+  },
+  {
+    question: 'Can I request a specific type of companion?',
+    answer: 'Absolutely. We cater to all preferences – VIP, Russian, Bengali, Punjabi, North Indian, college girls, housewives, GFE specialists, and more. Just tell us what you\'re looking for and we\'ll match you with the ideal companion.',
+  },
+  {
+    question: 'How quickly can you arrange a booking?',
+    answer: 'Most bookings are confirmed within 30–60 minutes of your enquiry. For urgent or last-minute requests, calling us directly gives the fastest response. We pride ourselves on efficient, hassle-free booking.',
+  },
+  {
+    question: 'Are your escorts available for travel and outstation trips?',
+    answer: 'Yes. We can arrange companionship for outstation travel, business trips, and vacations. Travel expenses and arrangements are discussed at the time of booking. Our VIP escorts are experienced in discreet travel companionship.',
+  },
+  {
+    question: 'Do you provide services to tourists and business travellers in Mumbai?',
+    answer: 'Yes, a large portion of our clientele are tourists, NRIs, and business travellers staying in Mumbai hotels. Our escorts are familiar with all major hotels and can arrive discreetly at your location within the agreed time.',
+  },
+  {
+    question: 'What safety measures do you have in place?',
+    answer: 'All companions undergo health and background screening. Bookings are confirmed only through direct communication with our team. We do not operate through third-party platforms, ensuring complete control over quality and safety.',
+  },
+  {
+    question: 'Can I book companions for social events and parties?',
+    answer: 'Yes. Our companions are well-presented and socially adept, making them perfect for corporate dinners, parties, social events, and public outings. They blend in naturally and maintain complete professionalism throughout.',
+  },
+  {
+    question: 'Are long-term or regular booking arrangements available?',
+    answer: 'Yes. We accommodate regular clients who prefer consistent companionship arrangements. Long-term bookings can be discussed with our team and we offer priority scheduling for repeat clients.',
+  },
+  {
+    question: 'Do you operate in Thane and Navi Mumbai as well?',
+    answer: 'Fully yes. We have dedicated companions based in Thane and Navi Mumbai areas. Response times and service standards are identical to our Mumbai operations. Outcall and incall both available.',
+  },
+  {
+    question: 'What is your cancellation and rescheduling policy?',
+    answer: 'We understand plans change. We ask for reasonable notice for cancellations. Rescheduling is generally accommodated based on companion availability. Contact our team as early as possible if your plans change.',
+  },
+  {
+    question: 'Are corporate packages available for business clients?',
+    answer: 'Yes, we offer discreet packages for corporate clients requiring companionship for business events, client entertainment, or executive travel. Contact us directly to discuss requirements and customised arrangements.',
+  },
+  {
+    question: 'How do I know the photos are genuine?',
+    answer: 'We guarantee photo authenticity. Every profile photo is verified by our team before being shared with clients. We have a strict no-fake-photo policy. If there is ever a discrepancy, we resolve it immediately.',
+  },
 ]
 
 export default function AboutPage() {

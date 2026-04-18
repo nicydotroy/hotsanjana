@@ -198,4 +198,40 @@ export const faqs = [
     question: 'Can I book for overnight stays?',
     answer: 'Yes, overnight bookings are available. Our overnight service provides a complete evening experience including dinner companionship and a full night together. This is available 7 days a week subject to companion availability.',
   },
+  {
+    question: 'Do you provide escort service in Navi Mumbai and Thane?',
+    answer: 'Yes! We are fully operational in Navi Mumbai (Vashi, Nerul, Kharghar, Belapur, Airoli, Panvel) and Thane (Thane city, Kalyan, Dombivali, Mira Road, Bhiwandi). Same 24/7 availability and verified profiles as Mumbai.',
+  },
+  {
+    question: 'Are Russian or international escorts available in Mumbai?',
+    answer: 'Yes, we have a select roster of international and Russian escorts available in Mumbai. They are available for outcall at premium hotels and private residences. Contact us to check current availability and profiles.',
+  },
+  {
+    question: 'What is the minimum booking duration?',
+    answer: 'The minimum booking duration is typically 1 hour for most escort services. However, specific durations may vary by companion. We also offer 2-hour, 3-hour, full-day, and overnight packages for a more complete experience.',
+  },
+  {
+    question: 'Can I see escort profiles before confirming a booking?',
+    answer: 'Yes. After you contact us with your preferences, we share verified photo profiles of available companions matching your requirements. You can choose based on looks, personality type, and availability.',
+  },
+  {
+    question: 'Are same-day and last-minute bookings accepted?',
+    answer: 'Absolutely. We specialise in quick turnarounds. Most bookings can be confirmed within 30–60 minutes. For last-minute requests, call us directly for the fastest response and availability check.',
+  },
+  {
+    question: 'Is GFE (Girlfriend Experience) service available?',
+    answer: 'Yes, our GFE escorts specialise in providing a warm, genuine companionship experience – from dinner dates and social outings to private time. They are charming, conversational, and make you feel completely at ease.',
+  },
+  {
+    question: 'How is payment handled for escort services?',
+    answer: 'Payment is made directly to the escort/companion at the time of meeting. We do not collect any advance payment online. All transactions are private, in-person, and completely confidential.',
+  },
+  {
+    question: 'Can I book a VIP escort for corporate events or business trips?',
+    answer: 'Yes. We offer premium VIP companionship for corporate dinners, business events, hotel stays, and travel. Our VIP escorts are sophisticated, well-groomed, and completely discreet – ideal for high-profile clients.',
+  },
+  {
+    question: 'Do you serve clients in hotels across Mumbai?',
+    answer: 'Yes, hotel outcall is one of our most popular services. Our escorts are familiar with all major 3-star, 4-star, and 5-star hotels across Mumbai, Navi Mumbai, and Thane. Just share your hotel name and room number after booking.',
+  },
 ]

@@ -50,7 +50,7 @@ export default async function CallGirlsLocationPage({ params }: PageProps) {
   const locationFaqs = [
     {
       question: `How do I contact call girls in ${loc.name}?`,
-      answer: `You can reach us 24/7 by calling ${SITE_CONFIG.phoneDisplay} or messaging us on WhatsApp @${SITE_CONFIG.whatsappDisplay}. Simply mention "${loc.name}" and your preferred time. We confirm bookings within minutes.`,
+      answer: `You can reach us 24/7 by calling ${SITE_CONFIG.phoneDisplay} or messaging us on WhatsApp ${SITE_CONFIG.whatsappDisplay}. Simply mention "${loc.name}" and your preferred time. We confirm bookings within minutes.`,
     },
     {
       question: `Are call girls in ${loc.name} available late at night?`,
@@ -67,6 +67,50 @@ export default async function CallGirlsLocationPage({ params }: PageProps) {
     {
       question: `Is booking call girls in ${loc.name} safe?`,
       answer: `Yes, 100% safe. All our call girls in ${loc.name} are verified, and we maintain strict confidentiality. Your personal information is never shared. We've been operating safely for years with thousands of satisfied clients in Mumbai.`,
+    },
+    {
+      question: `Are call girls available 24/7 in ${loc.name}?`,
+      answer: `Yes! Our call girls in ${loc.name} operate around the clock – 24 hours, 7 days a week, including weekends and public holidays. Day or night, our team is available to confirm your booking in ${loc.name}.`,
+    },
+    {
+      question: `Do you offer incall service for call girls in ${loc.name}?`,
+      answer: `Yes. Both incall (you visit our discreet location near ${loc.name}) and outcall (we come to you) services are available. Incall is ideal for clients who prefer a private, ready-set location rather than arranging their own space.`,
+    },
+    {
+      question: `What types of call girls are available in ${loc.name}?`,
+      answer: `We offer VIP escorts, college girls, housewives, Russian, Bengali, Punjabi, North Indian, and GFE specialists in ${loc.name}. Let us know your preference and we\'ll match you with the right companion from our verified profiles.`,
+    },
+    {
+      question: `How quickly can a call girl be arranged in ${loc.name}?`,
+      answer: `In most cases bookings in ${loc.name} are confirmed within 30–60 minutes. The companion typically arrives within 45–90 minutes of confirmation. For the fastest response, call us directly rather than WhatsApp.`,
+    },
+    {
+      question: `Is the booking process discreet in ${loc.name}?`,
+      answer: `Yes, completely. All communication is private. We do not display your number or share your details with anyone. Our call girls in ${loc.name} arrive in plain clothing and behave like regular visitors to maintain discretion.`,
+    },
+    {
+      question: `Can I see profiles before choosing a call girl in ${loc.name}?`,
+      answer: `Yes. After you contact us, we share genuine photo profiles of available call girls in ${loc.name} that match your preference. You can choose at leisure before confirming. All photos are verified and current.`,
+    },
+    {
+      question: `Are Russian or foreign call girls available in ${loc.name}?`,
+      answer: `Yes, we have a curated selection of Russian and international call girls available for ${loc.name} outcall bookings. These are premium companions suited for hotel stays and special occasions. Contact us to check availability.`,
+    },
+    {
+      question: `What is the minimum booking duration for call girls in ${loc.name}?`,
+      answer: `The minimum booking is 1 hour in ${loc.name}. We also offer 2-hour, 3-hour, full-night, and overnight packages. Longer bookings provide a more relaxed experience and are available at better value rates.`,
+    },
+    {
+      question: `Do call girls provide overnight services in ${loc.name}?`,
+      answer: `Yes. Overnight bookings (full night) are available in ${loc.name} subject to the companion\'s schedule. Overnight packages cover evening through morning and offer the most comprehensive experience. Contact us to book.`,
+    },
+    {
+      question: `Are college girl escorts available in ${loc.name}?`,
+      answer: `Yes. We have a selection of young, college-going companions available in ${loc.name}. All are adults, fully verified, and offer a fun, youthful GFE-style experience. Contact us to view available profiles.`,
+    },
+    {
+      question: `Which nearby areas do you serve from ${loc.name}?`,
+      answer: `From ${loc.name} we also cover ${loc.nearbyAreas.slice(0, 5).join(', ')} and adjacent localities. Our call girls can travel to nearby areas – just let us know your exact address when booking.`,
     },
   ]
 

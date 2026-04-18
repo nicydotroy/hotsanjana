@@ -42,7 +42,7 @@ export default async function EscortTypePage({ params }: PageProps) {
   const typeFaqs = [
     {
       question: `How do I book ${escortType.name} in Mumbai?`,
-      answer: `Booking ${escortType.name} is simple. Call us at +91-9038976363 or message on WhatsApp @hotsanjana. Mention "${escortType.name}" and your preferred location and time. We confirm within minutes.`,
+      answer: `Booking ${escortType.name} is simple. Call us at +91-9038976363 or message on WhatsApp +91-90389-76363. Mention "${escortType.name}" and your preferred location and time. We confirm within minutes.`,
     },
     {
       question: `Are ${escortType.name} available 24 hours?`,
@@ -55,6 +55,54 @@ export default async function EscortTypePage({ params }: PageProps) {
     {
       question: `Are the ${escortType.name} profiles verified?`,
       answer: `Yes, every profile is thoroughly verified by our team. We ensure authenticity, professionalism, and safety for all clients. We maintain a zero-tolerance policy for fake profiles.`,
+    },
+    {
+      question: `What are the rates for ${escortType.name} in Mumbai?`,
+      answer: `Rates for ${escortType.name} vary by duration (1 hour, 2 hours, overnight) and service type (incall/outcall). We offer competitive, transparent pricing with no hidden charges. Call us for current rates and offers.`,
+    },
+    {
+      question: `Do ${escortType.name} come to hotels in Mumbai?`,
+      answer: `Yes. Hotel outcall is available for all ${escortType.name} across Mumbai, Navi Mumbai, and Thane. Our companions are experienced in discreet hotel visits and familiar with all major 3-star to 5-star properties.`,
+    },
+    {
+      question: `Are ${escortType.name} available in Navi Mumbai and Thane?`,
+      answer: `Absolutely. Our ${escortType.name} serve not just Mumbai but also all areas of Navi Mumbai (Vashi, Nerul, Kharghar, Belapur) and Thane (Thane city, Kalyan, Dombivali, Mira Road) with the same 24/7 availability.`,
+    },
+    {
+      question: `Can I book ${escortType.name} for an overnight stay?`,
+      answer: `Yes. Overnight bookings for ${escortType.name} are available subject to companion schedule. Our overnight package covers the full evening through morning, offering the most complete and relaxing experience.`,
+    },
+    {
+      question: `Is the ${escortType.name} booking process discreet?`,
+      answer: `Completely. All communication and bookings for ${escortType.name} are handled with strict confidentiality. We never share client details with anyone. Our companions maintain full discretion before, during, and after every meeting.`,
+    },
+    {
+      question: `What is the minimum booking duration for ${escortType.name}?`,
+      answer: `The minimum booking for ${escortType.name} is typically 1 hour. We also offer 2-hour, 3-hour, full-day, and overnight packages for a more comfortable and enjoyable experience without feeling rushed.`,
+    },
+    {
+      question: `Are incall and outcall both available for ${escortType.name}?`,
+      answer: `Yes, both incall and outcall services are available for ${escortType.name} in Mumbai. For incall you visit a discreet private location; for outcall the companion comes to your hotel, home, or chosen address.`,
+    },
+    {
+      question: `Is same-day booking possible for ${escortType.name}?`,
+      answer: `Yes. Same-day bookings for ${escortType.name} are accepted and usually confirmed within 30–60 minutes. For the fastest response on last-minute requests, calling us directly is recommended over WhatsApp.`,
+    },
+    {
+      question: `Can I see profiles of ${escortType.name} before booking?`,
+      answer: `Yes. Once you contact us with your requirements, we share verified photo profiles of available ${escortType.name} companions. All photos are genuine and current – we guarantee photo authenticity.`,
+    },
+    {
+      question: `Are ${escortType.name} available for social events and dinners?`,
+      answer: `Yes. Our ${escortType.name} are socially refined and can accompany you to parties, corporate dinners, events, and outings. They are well-presented, conversational, and completely discreet in public settings.`,
+    },
+    {
+      question: `What makes ${escortType.name} different from other escort types?`,
+      answer: `${escortType.tagline}. Each companion in this category brings a unique personality and specialisation. ${escortType.description.slice(0, 120)} Contact us to find the perfect match for your requirements.`,
+    },
+    {
+      question: `How quickly can ${escortType.name} be arranged in Mumbai?`,
+      answer: `For ${escortType.name} in Mumbai, most bookings are arranged within 1–2 hours of confirmation. Premium profiles may require slightly more advance notice. Contact us early in the day for same-day bookings.`,
     },
   ]
 

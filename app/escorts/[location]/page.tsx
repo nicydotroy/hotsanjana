@@ -55,7 +55,7 @@ export default async function EscortLocationPage({ params }: PageProps) {
     },
     {
       question: `How do I book an escort in ${loc.name}?`,
-      answer: `Booking is simple. Call us at ${SITE_CONFIG.phoneDisplay} or message us on WhatsApp @${SITE_CONFIG.whatsappDisplay}. Tell us your preferred location in ${loc.name}, preferred time, and any special requirements. We confirm within minutes.`,
+      answer: `Booking is simple. Call us at ${SITE_CONFIG.phoneDisplay} or message us on WhatsApp ${SITE_CONFIG.whatsappDisplay}. Tell us your preferred location in ${loc.name}, preferred time, and any special requirements. We confirm within minutes.`,
     },
     {
       question: `Do you offer incall and outcall services in ${loc.name}?`,
@@ -68,6 +68,50 @@ export default async function EscortLocationPage({ params }: PageProps) {
     {
       question: `What types of escorts are available in ${loc.name}?`,
       answer: `In ${loc.name} we offer a wide range: VIP high-class escorts, college-going escorts, housewife companions, Russian/foreign escorts, North Indian & South Indian beauties, GFE (girlfriend experience), and more. Call us to check current availability.`,
+    },
+    {
+      question: `What are the rates for escorts in ${loc.name}?`,
+      answer: `Rates depend on the type of escort, duration, and service (incall/outcall). We cater to all budgets with transparent, no-hidden-charge pricing. Call ${SITE_CONFIG.phoneDisplay} for today\'s rates and ongoing offers in ${loc.name}.`,
+    },
+    {
+      question: `Do escorts in ${loc.name} come to hotels?`,
+      answer: `Yes. Hotel outcall is one of our most popular services in ${loc.name}. Our escorts are familiar with all major hotels in the area and arrive discreetly. Simply share your hotel name and room number after confirming your booking.`,
+    },
+    {
+      question: `Is same-day booking available in ${loc.name}?`,
+      answer: `Yes! Same-day and last-minute bookings are accepted in ${loc.name}. Most bookings are confirmed within 30–60 minutes. For urgent requests, call us directly for the fastest response.`,
+    },
+    {
+      question: `What is the minimum booking duration for escorts in ${loc.name}?`,
+      answer: `The minimum booking is typically 1 hour in ${loc.name}. We also offer 2-hour, 3-hour, full-evening, and overnight packages. Longer bookings offer better value and a more relaxed, enjoyable experience.`,
+    },
+    {
+      question: `Are GFE (Girlfriend Experience) escorts available in ${loc.name}?`,
+      answer: `Yes. Our GFE escorts in ${loc.name} specialize in warm, intimate companionship – including dinner dates, social outings, and private time. They are charming, conversational, and make every moment genuinely enjoyable.`,
+    },
+    {
+      question: `Can I book an escort overnight in ${loc.name}?`,
+      answer: `Yes, overnight bookings are available in ${loc.name}. Our overnight companions provide a complete experience from evening through morning. Availability is subject to the escort\'s schedule – contact us to confirm.`,
+    },
+    {
+      question: `Are VIP escorts available in ${loc.name}?`,
+      answer: `Yes. We have a selection of premium VIP escorts in ${loc.name} who are highly educated, elegantly presented, and experienced in high-profile social settings. Ideal for corporate events, hotel stays, and special occasions.`,
+    },
+    {
+      question: `How quickly will the escort arrive in ${loc.name}?`,
+      answer: `Once your booking is confirmed, our escort in ${loc.name} typically arrives within 45–90 minutes depending on your exact location and traffic. We always provide an estimated arrival time at the time of confirmation.`,
+    },
+    {
+      question: `Which nearby areas are covered from ${loc.name}?`,
+      answer: `From ${loc.name} we also serve ${loc.nearbyAreas.slice(0, 5).join(', ')} and surrounding areas. Our escorts can travel to adjacent locations at no extra charge if within a reasonable distance.`,
+    },
+    {
+      question: `Are Russian escorts available in ${loc.name}?`,
+      answer: `Yes, we have a curated selection of Russian and international escorts available for ${loc.name}. They are available for hotel outcall and premium incall arrangements. Contact us to check current profiles and availability.`,
+    },
+    {
+      question: `How do I verify the escort profile is genuine in ${loc.name}?`,
+      answer: `All our escort profiles in ${loc.name} are personally verified by our team. We guarantee photo authenticity. If you have any concern after meeting, contact us immediately – client satisfaction and honesty are non-negotiable.`,
     },
   ]
 
