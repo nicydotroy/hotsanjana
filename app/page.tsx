@@ -264,8 +264,7 @@ export default function HomePage() {
       {/* ── Location Grid ── */}
       <LocationGrid
         title="Find Escorts Near You"
-        subtitle="Browse our verified escorts across 90+ locations in Mumbai and surrounding areas"
-        limit={36}
+        subtitle="Browse all verified escort locations across Mumbai, Navi Mumbai, Thane and more"
       />
 
       {/* ── Testimonials ── */}
