@@ -57,7 +57,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-flex mb-5 group">
-              <div className="relative w-20 h-20 transition-transform duration-300 group-hover:scale-105">
+              <div className="relative w-28 h-28 transition-transform duration-300 group-hover:scale-110">
                 <Image
                   src="/logo.png"
                   alt="Hot Sanjana Logo"
