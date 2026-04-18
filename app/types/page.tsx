@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Hero from '@/components/Hero'
 import BookingCTA from '@/components/BookingCTA'
 import { escortTypes } from '@/data/escort-types'
@@ -41,31 +42,47 @@ export default function TypesPage() {
               <Link
                 key={type.slug}
                 href={`/escort-types/${type.slug}`}
-                className="group relative rounded-2xl overflow-hidden border border-red-900/30 hover:border-red-700/50 hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 p-6"
+                className="group relative rounded-2xl overflow-hidden border border-red-900/30 hover:border-red-700/50 hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
                 style={{ background: 'linear-gradient(135deg, #140500, #1f0a00)' }}
               >
-                {type.badge && (
-                  <div
-                    className="absolute top-4 right-4 text-black text-xs font-bold px-3 py-1 rounded-full"
-                    style={{ background: 'linear-gradient(135deg, #cc9900, #ffd700)' }}
-                  >
-                    {type.badge}
-                  </div>
-                )}
-
-                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {type.icon}
+                {/* Category Image */}
+                <div className="relative w-full h-52 overflow-hidden">
+                  {type.image ? (
+                    <Image
+                      src={type.image}
+                      alt={type.imageAlt}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-6xl" style={{ background: '#1f0800' }}>
+                      {type.icon}
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                  {type.badge && (
+                    <div
+                      className="absolute top-3 right-3 text-black text-xs font-bold px-3 py-1 rounded-full"
+                      style={{ background: 'linear-gradient(135deg, #cc9900, #ffd700)' }}
+                    >
+                      {type.badge}
+                    </div>
+                  )}
+                  <div className="absolute bottom-3 left-4 text-3xl">{type.icon}</div>
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition-colors">
-                  {type.name}
-                </h3>
-                <p className="text-orange-400 text-sm font-medium mb-3">{type.tagline}</p>
-                <p className="text-gray-400 text-sm leading-relaxed">{type.description}</p>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition-colors">
+                    {type.name}
+                  </h3>
+                  <p className="text-orange-400 text-sm font-medium mb-3">{type.tagline}</p>
+                  <p className="text-gray-400 text-sm leading-relaxed">{type.description}</p>
 
-                <div className="mt-4 flex items-center gap-1 text-red-400 text-sm font-semibold group-hover:gap-2 transition-all">
-                  <span>View profiles</span>
-                  <span>→</span>
+                  <div className="mt-4 flex items-center gap-1 text-red-400 text-sm font-semibold group-hover:gap-2 transition-all">
+                    <span>View profiles</span>
+                    <span>→</span>
+                  </div>
                 </div>
               </Link>
             ))}

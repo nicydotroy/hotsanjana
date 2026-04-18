@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import Image from 'next/image'
 import Hero from '@/components/Hero'
 import Breadcrumb from '@/components/Breadcrumb'
 import BookingButtons from '@/components/BookingButtons'
@@ -82,6 +83,20 @@ export default async function EscortTypePage({ params }: PageProps) {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             <div className="lg:col-span-2 space-y-6">
+              {/* Category Image */}
+              {escortType.image && (
+                <div className="relative w-full h-72 rounded-2xl overflow-hidden border border-red-900/30">
+                  <Image
+                    src={escortType.image}
+                    alt={escortType.imageAlt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 66vw"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                </div>
+              )}
               <h2 className="text-2xl lg:text-3xl font-bold text-white">
                 About{' '}
                 <span className="gradient-text">{escortType.name}</span>
@@ -146,11 +161,29 @@ export default async function EscortTypePage({ params }: PageProps) {
                 <Link
                   key={t.slug}
                   href={`/escort-types/${t.slug}`}
-                  className="rounded-xl p-4 text-center border border-red-900/30 hover:border-red-700/50 hover:shadow-card hover:-translate-y-1 transition-all duration-300"
+                  className="group rounded-xl overflow-hidden border border-red-900/30 hover:border-red-700/50 hover:shadow-card hover:-translate-y-1 transition-all duration-300"
                   style={{ background: 'linear-gradient(135deg, #140500, #1f0a00)' }}
                 >
-                  <div className="text-3xl mb-2">{t.icon}</div>
-                  <p className="text-sm font-semibold text-gray-300 hover:text-red-400">{t.name}</p>
+                  <div className="relative w-full h-28 overflow-hidden">
+                    {t.image ? (
+                      <Image
+                        src={t.image}
+                        alt={t.imageAlt}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="25vw"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-3xl" style={{ background: '#1f0800' }}>
+                        {t.icon}
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                    <div className="absolute bottom-2 left-3 text-xl">{t.icon}</div>
+                  </div>
+                  <div className="p-3 text-center">
+                    <p className="text-sm font-semibold text-gray-300 group-hover:text-red-400">{t.name}</p>
+                  </div>
                 </Link>
               ))}
           </div>
