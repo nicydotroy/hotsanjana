@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Hero from '@/components/Hero'
 import BookingCTA from '@/components/BookingCTA'
 import { services } from '@/data/services'
@@ -39,28 +40,47 @@ export default function ServicesPage() {
             {services.map((service) => (
               <div
                 key={service.slug}
-                className="group rounded-2xl p-7 border border-red-900/30 hover:border-red-700/50 hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
+                className="group rounded-2xl overflow-hidden border border-red-900/30 hover:border-red-700/50 hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
                 style={{ background: 'linear-gradient(135deg, #140500, #1f0a00)' }}
               >
-                <div className="text-5xl mb-5 group-hover:scale-110 transition-transform duration-300">
-                  {service.icon}
+                {/* Service Image */}
+                <div className="relative w-full h-48 overflow-hidden">
+                  {service.image ? (
+                    <Image
+                      src={service.image}
+                      alt={service.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-6xl" style={{ background: '#1f0800' }}>
+                      {service.icon}
+                    </div>
+                  )}
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                  <div className="absolute bottom-3 left-4 text-3xl">{service.icon}</div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-red-400 transition-colors">
-                  {service.name}
-                </h3>
-                <p className="text-gray-400 leading-relaxed text-sm mb-5">
-                  {service.description}
-                </p>
-                {service.features && service.features.length > 0 && (
-                  <ul className="space-y-2">
-                    {service.features.map((feat) => (
-                      <li key={feat} className="flex items-center gap-2 text-sm text-gray-300">
-                        <span className="text-red-500">•</span>
-                        {feat}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+
+                <div className="p-7">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-red-400 transition-colors">
+                    {service.name}
+                  </h3>
+                  <p className="text-gray-400 leading-relaxed text-sm mb-5">
+                    {service.description}
+                  </p>
+                  {service.features && service.features.length > 0 && (
+                    <ul className="space-y-2">
+                      {service.features.map((feat) => (
+                        <li key={feat} className="flex items-center gap-2 text-sm text-gray-300">
+                          <span className="text-red-500">•</span>
+                          {feat}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               </div>
             ))}
           </div>

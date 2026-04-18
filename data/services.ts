@@ -21,6 +21,7 @@ export interface Service {
   shortDesc: string
   description: string
   icon: string
+  image: string
   features: string[]
 }
 
@@ -32,6 +33,7 @@ export const services: Service[] = [
     shortDesc: 'Visit our private, premium locations',
     description: 'Our incall service provides access to our exclusive private locations across Mumbai. Enjoy a discreet, comfortable, and fully equipped space where you can relax completely.',
     icon: '🏠',
+    image: '/images/services/incall.jpg',
     features: ['Private, secure locations', 'Fully air-conditioned rooms', 'Complete privacy guaranteed', 'Refreshments provided', 'Flexible timing'],
   },
   {
@@ -41,6 +43,7 @@ export const services: Service[] = [
     shortDesc: 'We come to your hotel or residence',
     description: 'Our discreet outcall service delivers our companions directly to your hotel room, residence, or any location of your choice across Mumbai, Navi Mumbai, and Thane.',
     icon: '🚗',
+    image: '/images/services/outcall.jpg',
     features: ['Hotel visits accepted', 'Residence visits available', 'All Mumbai areas covered', 'Punctual & professional', 'Discreet arrival & departure'],
   },
   {
@@ -50,6 +53,7 @@ export const services: Service[] = [
     shortDesc: 'Elite service for discerning clients',
     description: 'Our VIP packages offer the ultimate companion experience with our most premium escorts, extended durations, multi-location options, and bespoke arrangements.',
     icon: '👑',
+    image: '/images/services/vip.jpg',
     features: ['Elite model companions', 'Multi-hour & overnight', 'Personalised arrangements', 'Priority booking', 'Complete confidentiality'],
   },
   {
@@ -59,6 +63,7 @@ export const services: Service[] = [
     shortDesc: 'Complete evening and night experience',
     description: 'For clients seeking extended companionship, our overnight service provides a full evening of sophisticated company – dinner, entertainment, and intimate time together.',
     icon: '🌙',
+    image: '/images/services/overnight.jpg',
     features: ['Full evening service', 'Dinner companion included', 'Hotel stays available', 'Girlfriend Experience option', 'Available 7 nights/week'],
   },
   {
@@ -68,6 +73,7 @@ export const services: Service[] = [
     shortDesc: 'Authentic romance and connection',
     description: 'The Girlfriend Experience creates genuine emotional warmth and romantic connection – going beyond physical companionship to provide true intimacy and understanding.',
     icon: '💕',
+    image: '/images/services/gfe.jpg',
     features: ['Emotional connection', 'Romantic dinner dates', 'Genuine affection', 'Meaningful conversation', 'Extended engagement options'],
   },
   {
@@ -77,6 +83,7 @@ export const services: Service[] = [
     shortDesc: 'Available round the clock',
     description: 'Our escorts are available 24 hours a day, 7 days a week – including weekends and holidays. Late-night bookings and early morning arrangements are fully accommodated.',
     icon: '🕐',
+    image: '/images/services/availability.jpg',
     features: ['Round-the-clock service', 'Weekends & holidays', 'Late night bookings', 'Same-day arrangements', 'Rapid confirmation'],
   },
 ]
