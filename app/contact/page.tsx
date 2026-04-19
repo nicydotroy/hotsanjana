@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Hero from '@/components/Hero'
 import BookingCTA from '@/components/BookingCTA'
 import FAQSection from '@/components/FAQSection'
+import Breadcrumb from '@/components/Breadcrumb'
 import { SITE_CONFIG } from '@/data/services'
 
 const contactFaqs = [
@@ -76,11 +77,20 @@ export const metadata: Metadata = {
   description:
     'Contact Hot Sanjana for premium escort bookings in Mumbai. Call +91-9038976363 or WhatsApp +91-90389-76363. Available 24/7 across all Mumbai locations.',
   alternates: { canonical: 'https://hotsanjana.in/contact' },
+  openGraph: {
+    type: 'website',
+    title: 'Contact Hot Sanjana | +91-9038976363 | Mumbai Escorts',
+    description: 'Contact Hot Sanjana for escort bookings in Mumbai. Call or WhatsApp +91-9038976363. Available 24/7.',
+    url: 'https://hotsanjana.in/contact',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, type: 'image/jpeg', alt: 'Contact Hot Sanjana Mumbai' }],
+  },
 }
 
 export default function ContactPage() {
   return (
     <>
+      <Breadcrumb items={[{ label: 'Contact', href: '/contact' }]} />
+
       <Hero
         badge="Get In Touch"
         title="Contact Hot Sanjana"

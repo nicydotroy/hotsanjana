@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Hero from '@/components/Hero'
 import BookingCTA from '@/components/BookingCTA'
 import FAQSection from '@/components/FAQSection'
+import Breadcrumb from '@/components/Breadcrumb'
 import { services } from '@/data/services'
 
 const servicesFaqs = [
@@ -77,11 +78,20 @@ export const metadata: Metadata = {
   description:
     'Explore all escort services offered by Hot Sanjana: incall, outcall, VIP escorts, overnight, GFE, and 24/7 availability across all Mumbai locations.',
   alternates: { canonical: 'https://hotsanjana.in/services' },
+  openGraph: {
+    type: 'website',
+    title: 'Our Services | Incall, Outcall, VIP & More | Hot Sanjana Mumbai',
+    description: 'Explore all escort services: incall, outcall, VIP escorts, overnight, GFE, and 24/7 availability across all Mumbai locations.',
+    url: 'https://hotsanjana.in/services',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, type: 'image/jpeg', alt: 'Hot Sanjana Escort Services Mumbai' }],
+  },
 }
 
 export default function ServicesPage() {
   return (
     <>
+      <Breadcrumb items={[{ label: 'Services', href: '/services' }]} />
+
       <Hero
         badge="Our Services"
         title="Premium Escort Services in Mumbai"

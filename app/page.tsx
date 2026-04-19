@@ -14,11 +14,12 @@ export const metadata: Metadata = {
     'Hot Sanjana – Mumbai\'s top escort service with 500+ verified escorts. Available 24/7 in Andheri, Bandra, Juhu, Thane, Navi Mumbai & all areas. Call +91-9038976363',
   alternates: { canonical: 'https://hotsanjana.in' },
   openGraph: {
+    type: 'website',
     title: 'Hot Sanjana | Premium Escorts in Mumbai | 24/7 Available',
     description:
       'Mumbai\'s top escort service with 500+ verified escorts available 24/7 across all locations.',
     url: 'https://hotsanjana.in',
-    images: [{ url: '/og-home.jpg', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, type: 'image/jpeg', alt: 'Hot Sanjana – Premium Escorts Mumbai' }],
   },
 }
 

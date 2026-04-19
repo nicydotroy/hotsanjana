@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Hero from '@/components/Hero'
 import BookingCTA from '@/components/BookingCTA'
 import FAQSection from '@/components/FAQSection'
+import Breadcrumb from '@/components/Breadcrumb'
 
 const galleryFaqs = [
   {
@@ -75,6 +76,13 @@ export const metadata: Metadata = {
   description:
     'Browse the Hot Sanjana gallery of premium escorts available in Mumbai. All profiles are 100% verified and available 24/7 across Mumbai.',
   alternates: { canonical: 'https://hotsanjana.in/gallery' },
+  openGraph: {
+    type: 'website',
+    title: 'Escort Gallery | Hot Sanjana Mumbai',
+    description: 'Browse verified escort profiles in Mumbai. 500+ real photos, all categories available 24/7.',
+    url: 'https://hotsanjana.in/gallery',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, type: 'image/jpeg', alt: 'Hot Sanjana Escort Gallery Mumbai' }],
+  },
 }
 
 // Placeholder gallery items – replace src with real images
@@ -87,6 +95,8 @@ const galleryItems = Array.from({ length: 12 }, (_, i) => ({
 export default function GalleryPage() {
   return (
     <>
+      <Breadcrumb items={[{ label: 'Gallery', href: '/gallery' }]} />
+
       <Hero
         badge="Our Gallery"
         title="Browse Escort Profiles"

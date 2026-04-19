@@ -20,15 +20,6 @@ export const metadata: Metadata = {
   },
   description:
     'Hot Sanjana offers premium verified escorts and call girls in Mumbai, Navi Mumbai, Thane and nearby areas. Discreet, professional & available 24/7. Call +91-9038976363',
-  keywords: [
-    'escorts in Mumbai',
-    'call girls Mumbai',
-    'Mumbai escorts',
-    'escort service Mumbai',
-    'hot escorts Mumbai',
-    'independent escorts Mumbai',
-    'escort agency Mumbai',
-  ],
   authors: [{ name: SITE_CONFIG.name }],
   creator: SITE_CONFIG.name,
   robots: {
@@ -55,6 +46,7 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
+        type: 'image/jpeg',
         alt: `${SITE_CONFIG.name} – Mumbai Escort Service`,
       },
     ],
@@ -82,6 +74,11 @@ export default function RootLayout({
         {/* Preconnect for fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Geo meta tags for local SEO */}
+        <meta name="geo.region" content="IN-MH" />
+        <meta name="geo.placename" content="Mumbai, Maharashtra, India" />
+        <meta name="geo.position" content="19.0760;72.8777" />
+        <meta name="ICBM" content="19.0760, 72.8777" />
       </head>
       <body className="font-sans antialiased flex flex-col min-h-screen">
         {/* Adult content disclaimer banner */}

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Hero from '@/components/Hero'
 import BookingCTA from '@/components/BookingCTA'
 import FAQSection from '@/components/FAQSection'
+import Breadcrumb from '@/components/Breadcrumb'
 import { SITE_CONFIG } from '@/data/services'
 
 export const metadata: Metadata = {
@@ -9,6 +10,13 @@ export const metadata: Metadata = {
   description:
     'Learn about Hot Sanjana – Mumbai\'s most trusted and discreet escort service. 10+ years of excellence, 500+ verified escorts, serving all Mumbai locations 24/7.',
   alternates: { canonical: 'https://hotsanjana.in/about' },
+  openGraph: {
+    type: 'website',
+    title: 'About Hot Sanjana | Mumbai\'s Premier Escort Service',
+    description: 'Learn about Hot Sanjana – Mumbai\'s most trusted escort service. 10+ years of excellence, 500+ verified escorts, serving all Mumbai locations 24/7.',
+    url: 'https://hotsanjana.in/about',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, type: 'image/jpeg', alt: 'About Hot Sanjana – Mumbai Escort Service' }],
+  },
 }
 
 const aboutFaqs = [
@@ -81,6 +89,8 @@ const aboutFaqs = [
 export default function AboutPage() {
   return (
     <>
+      <Breadcrumb items={[{ label: 'About Us', href: '/about' }]} />
+
       <Hero
         badge="About Us"
         title="About Hot Sanjana"

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Hero from '@/components/Hero'
 import BookingCTA from '@/components/BookingCTA'
 import FAQSection from '@/components/FAQSection'
+import Breadcrumb from '@/components/Breadcrumb'
 import { SITE_CONFIG } from '@/data/services'
 import { escortTypes } from '@/data/escort-types'
 
@@ -79,11 +80,20 @@ export const metadata: Metadata = {
   description:
     'Browse all escort categories in Mumbai: VIP escorts, Russian escorts, Bengali escorts, GFE, housewife companions, and more. All verified and available 24/7.',
   alternates: { canonical: 'https://hotsanjana.in/types' },
+  openGraph: {
+    type: 'website',
+    title: 'Escort Types in Mumbai | VIP, Russian, Bengali & More | Hot Sanjana',
+    description: 'Browse all escort categories in Mumbai: VIP, Russian, Bengali, GFE, housewife companions and more. All verified, available 24/7.',
+    url: 'https://hotsanjana.in/types',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, type: 'image/jpeg', alt: 'Escort Categories Mumbai – Hot Sanjana' }],
+  },
 }
 
 export default function TypesPage() {
   return (
     <>
+      <Breadcrumb items={[{ label: 'Escort Types', href: '/types' }]} />
+
       <Hero
         badge="All Categories"
         title="Escort Categories in Mumbai"

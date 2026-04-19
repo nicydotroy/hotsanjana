@@ -4,6 +4,7 @@ import LocationGrid from '@/components/LocationGrid'
 import Hero from '@/components/Hero'
 import BookingCTA from '@/components/BookingCTA'
 import FAQSection from '@/components/FAQSection'
+import Breadcrumb from '@/components/Breadcrumb'
 import { locations } from '@/data/locations'
 import { escortTypes } from '@/data/escort-types'
 
@@ -79,6 +80,13 @@ export const metadata: Metadata = {
   description:
     'Browse escorts and call girls by location across 90+ areas in Mumbai, Navi Mumbai, Thane, Vasai-Virar and beyond. Find escorts near you.',
   alternates: { canonical: 'https://hotsanjana.in/location' },
+  openGraph: {
+    type: 'website',
+    title: 'Escorts by Location in Mumbai | 90+ Areas | Hot Sanjana',
+    description: 'Find verified escorts near you across 90+ Mumbai locations including Andheri, Bandra, Thane, Navi Mumbai and more.',
+    url: 'https://hotsanjana.in/location',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, type: 'image/jpeg', alt: 'Mumbai Escort Locations – Hot Sanjana' }],
+  },
 }
 
 // Group by region
@@ -92,6 +100,8 @@ const regions = locations.reduce<Record<string, typeof locations>>((acc, loc) =>
 export default function LocationPage() {
   return (
     <>
+      <Breadcrumb items={[{ label: 'All Locations', href: '/location' }]} />
+
       <Hero
         badge="All Locations"
         title="Escorts Across Mumbai & Beyond"
