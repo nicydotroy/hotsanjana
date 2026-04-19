@@ -7,6 +7,7 @@ import FAQSection from '@/components/FAQSection'
 import Breadcrumb from '@/components/Breadcrumb'
 import { locations } from '@/data/locations'
 import { escortTypes } from '@/data/escort-types'
+import { metroCities } from '@/data/metro-cities'
 
 const locationFaqs = [
   {
@@ -198,9 +199,41 @@ export default function LocationPage() {
 
       <FAQSection faqs={locationFaqs} title="Mumbai Escort Locations – Frequently Asked Questions" subtitle="Coverage, availability, and booking details for all Mumbai areas" />
 
+      {/* ── All India Metro Cities ── */}
+      <section className="py-16 lg:py-20" style={{ background: '#040000' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-bold tracking-[0.25em] text-red-500 uppercase mb-3">Pan India Coverage</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              Escort Services Across{' '}
+              <span className="gradient-text">Top Indian Cities</span>
+            </h2>
+            <p className="text-gray-400 text-lg">
+              {metroCities.length} metro cities covered. Click any city to view available escorts.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+            {metroCities.map((city) => (
+              <a
+                key={city.slug}
+                href={`/escorts/${city.slug}`}
+                className="group rounded-xl p-4 text-center border border-red-900/30 hover:border-red-700/50 hover:shadow-card hover:-translate-y-0.5 transition-all duration-200"
+                style={{ background: 'linear-gradient(135deg, #140500, #1a0800)' }}
+              >
+                <span className="text-sm font-bold text-gray-200 group-hover:text-red-400 transition-colors block leading-tight">
+                  {city.name}
+                </span>
+                <span className="text-xs text-gray-600 mt-1 block">{city.state}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <BookingCTA
         title="Don't See Your Area?"
-        subtitle="We cover even more locations. Call us and we'll arrange escorts to any Mumbai address."
+        subtitle="We cover even more locations. Call us and we'll arrange escorts to any address across India."
       />
     </>
   )
