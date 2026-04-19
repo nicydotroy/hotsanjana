@@ -1,6 +1,74 @@
 import type { Metadata } from 'next'
 import Hero from '@/components/Hero'
 import BookingCTA from '@/components/BookingCTA'
+import FAQSection from '@/components/FAQSection'
+
+const galleryFaqs = [
+  {
+    question: 'Are all the escort profile photos genuine and real?',
+    answer: 'Yes. Every photo in the Hot Sanjana gallery is verified by our team before publishing. We maintain a strict no-fake-photo policy. The escort you see in the photo is the companion you will meet. If there is ever a discrepancy, we resolve it immediately.',
+  },
+  {
+    question: 'How do I view full escort profiles and additional photos?',
+    answer: 'The gallery shows a preview of available profiles. To view full profiles, additional photos, and current availability, simply contact us via call or WhatsApp. Our team will share verified profiles matching your preferences instantly.',
+  },
+  {
+    question: 'How many escort profiles are currently available in Mumbai?',
+    answer: 'Hot Sanjana maintains an active roster of 500+ verified escort profiles across Mumbai, Navi Mumbai, Thane, and beyond. Profiles span multiple categories including VIP, Russian, Bengali, North Indian, GFE, housewife, and college companions.',
+  },
+  {
+    question: 'Can I request more photos before confirming a booking?',
+    answer: 'Yes. Once you contact us, our team can share additional verified photos of the escort you are interested in via WhatsApp. This helps you make an informed choice before committing to a booking.',
+  },
+  {
+    question: 'How often are new escort profiles added to the gallery?',
+    answer: 'New profiles are added regularly as we onboard new verified companions. We recommend contacting us directly for the latest available profiles, as our roster is updated frequently and some of the newest additions may not yet appear in the gallery.',
+  },
+  {
+    question: 'Are all gallery profiles currently available for booking?',
+    answer: 'Availability varies based on current bookings and location. When you contact us, our team confirms real-time availability. If your preferred profile is not available, we suggest similar alternatives from our roster.',
+  },
+  {
+    question: 'Can I specifically choose an escort from the gallery?',
+    answer: 'Absolutely. You can specify which profile you are interested in when contacting us. We will confirm availability and arrange the booking. If that specific companion is unavailable, we will suggest the closest alternative based on your preferences.',
+  },
+  {
+    question: 'Do escort profiles include physical details like height and age?',
+    answer: 'Yes. Full profiles shared via WhatsApp include physical details such as age range, height, build, and personality notes. These help you find the right match. All details are accurate and verified by our team.',
+  },
+  {
+    question: 'What escort categories are represented in the gallery?',
+    answer: 'Our gallery features profiles from all major escort categories: VIP escorts, Russian escorts, Bengali escorts, Punjabi escorts, North Indian escorts, South Indian escorts, college companions, housewife companions, GFE specialists, and more.',
+  },
+  {
+    question: 'Are video profiles or video previews available?',
+    answer: 'In some cases, short video previews are available for premium profiles. Contact us via WhatsApp to inquire about video profiles for specific categories. Availability varies and is shared privately and securely.',
+  },
+  {
+    question: 'How are escort profiles verified before appearing in the gallery?',
+    answer: 'Every escort undergoes a personal verification process that includes identity confirmation, photo authentication, health screening, and a professional assessment. Only verified companions meeting our standards are added to the gallery.',
+  },
+  {
+    question: 'Can I see the profile before meeting the escort in person?',
+    answer: 'Yes. You will always receive verified photo confirmation of your companion before the meeting. We never send a different escort from the one confirmed. This is part of our transparency and quality guarantee.',
+  },
+  {
+    question: 'Are the gallery profiles updated to show current availability?',
+    answer: 'The gallery provides a general overview of our categories and profile types. For real-time availability and the most current profiles, contact us directly. Our team has up-to-date information on which companions are available at any given time.',
+  },
+  {
+    question: 'What happens if the escort I selected is unavailable?',
+    answer: 'If your chosen escort is unavailable, we immediately suggest alternatives with similar attributes from our roster. We never compromise on quality and ensure you are fully satisfied with the replacement suggestion before confirming.',
+  },
+  {
+    question: 'Are there international and Russian escort profiles in the gallery?',
+    answer: 'Yes. We have a selection of Russian and international escort profiles available in Mumbai. These are among our most premium profiles and are available in select locations. Contact us to confirm availability of international companions.',
+  },
+  {
+    question: 'Is browsing the gallery confidential and secure?',
+    answer: 'The public gallery is accessible online but does not contain personally identifiable information about escorts or clients. Full profiles are shared only via direct and private communication on WhatsApp. Your identity and browsing remain completely confidential.',
+  },
+]
 
 export const metadata: Metadata = {
   title: 'Gallery | Hot Sanjana Mumbai Escorts',
@@ -87,7 +155,8 @@ export default function GalleryPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                   <a
                     href="/contact"
-                    className="w-full text-center py-2.5 bg-white text-pink-600 font-bold text-sm rounded-full hover:bg-pink-50 transition-colors"
+                    className="w-full text-center py-2.5 font-bold text-sm rounded-full text-white hover:-translate-y-0.5 transition-transform"
+                    style={{ background: 'linear-gradient(135deg, #8b0000, #dc0000)' }}
                   >
                     Book This Profile
                   </a>
@@ -106,6 +175,8 @@ export default function GalleryPage() {
           </div>
         </div>
       </section>
+
+      <FAQSection faqs={galleryFaqs} title="Escort Gallery – Frequently Asked Questions" subtitle="Everything you need to know about our escort profiles" />
 
       <BookingCTA />
     </>

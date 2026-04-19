@@ -3,8 +3,76 @@ import Image from 'next/image'
 import LocationGrid from '@/components/LocationGrid'
 import Hero from '@/components/Hero'
 import BookingCTA from '@/components/BookingCTA'
+import FAQSection from '@/components/FAQSection'
 import { locations } from '@/data/locations'
 import { escortTypes } from '@/data/escort-types'
+
+const locationFaqs = [
+  {
+    question: 'Which areas of Mumbai does Hot Sanjana cover?',
+    answer: 'Hot Sanjana covers 90+ locations across Mumbai including Andheri, Bandra, Juhu, Colaba, Worli, Dadar, Borivali, Malad, Goregaon, Mulund, Kurla, and all major suburban and central areas. We are the most geographically extensive escort service in Mumbai.',
+  },
+  {
+    question: 'Are escort services available in Navi Mumbai?',
+    answer: 'Yes. We have a dedicated team of verified escorts based in Navi Mumbai covering areas like Vashi, Kharghar, Nerul, Belapur, Airoli, Ghansoli, and Panvel. Outcall and incall services are both available with the same quality and discretion as our Mumbai operations.',
+  },
+  {
+    question: 'Do you provide escort services in Thane district?',
+    answer: 'Yes. Thane is one of our major service areas. We cover Thane city, Kalyan, Dombivli, Ambernath, Bhiwandi, Ulhasnagar, and surrounding areas. Same-day and advance bookings are available throughout Thane district.',
+  },
+  {
+    question: 'Are call girls available in Vasai and Virar?',
+    answer: 'Yes. We serve Vasai, Virar, Nalasopara, and the broader Vasai-Virar belt. Our escorts are familiar with the area and can arrange both outcall visits to your location and incall appointments as per your preference.',
+  },
+  {
+    question: 'Can I book escorts in South Mumbai areas like Colaba and Worli?',
+    answer: 'Absolutely. South Mumbai including Colaba, Nariman Point, Churchgate, Marine Lines, Worli, Prabhadevi, and Parel is fully covered. These are among our highest-demand areas and we maintain dedicated profiles serving South Mumbai clients.',
+  },
+  {
+    question: 'Are escort services available in Andheri West and Andheri East?',
+    answer: 'Yes. Andheri is one of our most active service areas. Both Andheri West and Andheri East are covered, along with nearby areas like Lokhandwala, Versova, Oshiwara, MIDC, and Chakala. Multiple escorts are available in Andheri at any given time.',
+  },
+  {
+    question: 'Do you have escorts available in Bandra and Juhu?',
+    answer: 'Yes. Bandra (West and East) and Juhu are premium locations for us. These areas receive high demand and we have top-quality verified escorts available here. Both incall and outcall services are offered, including hotel room delivery in Juhu beach hotels.',
+  },
+  {
+    question: 'Are escort services available on the outskirts and distant suburbs?',
+    answer: 'Yes. We serve areas like Dahisar, Kandivali, Mira Road, Bhayander, Vasai Road, and even farther locations on request. For very distant areas, travel time and any applicable charges are discussed at the time of booking.',
+  },
+  {
+    question: 'Is same-day escort service available across all Mumbai locations?',
+    answer: 'Yes. Same-day service is available across all our coverage areas. For standard locations, we can arrange a companion within 60–90 minutes of your booking confirmation. Calling us directly ensures the fastest turnaround for same-day requests.',
+  },
+  {
+    question: 'Do travel charges apply for escorts going to distant locations?',
+    answer: 'Standard outcall rates apply across most Mumbai locations. For very distant areas or locations outside our primary coverage zone, minimal travel charges may apply and are always communicated transparently before you confirm the booking.',
+  },
+  {
+    question: 'Can escorts come directly to my hotel room anywhere in Mumbai?',
+    answer: 'Yes. Hotel room delivery is available across all Mumbai locations. Our escorts are experienced with hotel visits and arrive discreetly. They are professional, well-presented, and know how to navigate hotel environments without drawing attention.',
+  },
+  {
+    question: 'Are there call girls available in Borivali and Malad?',
+    answer: 'Yes. Borivali, Malad, Kandivali, and Goregaon are all active service areas. We have multiple verified profiles based in these northern suburb areas. Incall locations are also available in this belt for added convenience.',
+  },
+  {
+    question: 'Do you serve Pune and other cities outside Mumbai?',
+    answer: 'Yes. We extend our services to Pune and can arrange escorts for outstation visits. Pune bookings require advance notice and the logistics – including transport and accommodation if needed – are arranged as part of the booking process.',
+  },
+  {
+    question: 'How long does it take for an escort to arrive at my location?',
+    answer: 'For standard Mumbai locations, the typical arrival time is 45–90 minutes from booking confirmation. For areas in Navi Mumbai and Thane, allow 60–120 minutes. Exact timing is confirmed at the time of booking based on current traffic and escort availability.',
+  },
+  {
+    question: 'Are escort services available in Panvel and Kharghar?',
+    answer: 'Yes. Panvel, Kharghar, Kamothe, Ulwe, and New Panvel are all within our service coverage. These Navi Mumbai areas have growing demand and we maintain a steady roster of companions available for bookings in this zone.',
+  },
+  {
+    question: 'Which location in Mumbai has the highest escort availability?',
+    answer: 'Andheri, Bandra, Thane, and Navi Mumbai consistently have the highest availability of verified escorts due to demand. South Mumbai and Juhu also have strong availability. For any specific area, contact us and we will confirm current availability instantly.',
+  },
+]
 
 export const metadata: Metadata = {
   title: 'Escorts by Location in Mumbai | All Areas | Hot Sanjana',
@@ -117,6 +185,8 @@ export default function LocationPage() {
           ))}
         </div>
       </section>
+
+      <FAQSection faqs={locationFaqs} title="Mumbai Escort Locations – Frequently Asked Questions" subtitle="Coverage, availability, and booking details for all Mumbai areas" />
 
       <BookingCTA
         title="Don't See Your Area?"

@@ -2,7 +2,75 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Hero from '@/components/Hero'
 import BookingCTA from '@/components/BookingCTA'
+import FAQSection from '@/components/FAQSection'
 import { services } from '@/data/services'
+
+const servicesFaqs = [
+  {
+    question: 'What escort services does Hot Sanjana offer?',
+    answer: 'Hot Sanjana offers a comprehensive range of escort services including incall, outcall, overnight companionship, GFE (Girlfriend Experience), VIP escort services, hotel delivery, event companionship, and travel escort services. All services are available 24/7 across Mumbai.',
+  },
+  {
+    question: 'What is the difference between incall and outcall services?',
+    answer: 'Incall means you visit the escort at a pre-arranged location. Outcall means the escort comes to you – your home, hotel, or any preferred location in Mumbai. Both options are available with Hot Sanjana and can be arranged based on your preference.',
+  },
+  {
+    question: 'Is overnight escort service available?',
+    answer: 'Yes. We offer overnight bookings where your companion stays with you for the full night. This is one of our most popular premium services and is available with our VIP and select premium profiles across all Mumbai locations.',
+  },
+  {
+    question: 'What is the GFE (Girlfriend Experience)?',
+    answer: 'The Girlfriend Experience (GFE) is a premium companionship service where the escort acts as your girlfriend for the duration of the booking – engaging in natural conversation, affection, dining together, and creating a genuine connection. Our GFE specialists are highly experienced and provide an authentic, memorable experience.',
+  },
+  {
+    question: 'Can I book escorts for outstation and travel?',
+    answer: 'Absolutely. We arrange travel companionship for outstation trips, business travel, and vacations. Travel bookings require advance notice, and expenses like transport and accommodation are discussed at the time of booking. Our VIP companions are experienced in discreet travel.',
+  },
+  {
+    question: 'How quickly can you arrange a service booking?',
+    answer: 'Most bookings are confirmed within 30–60 minutes of first contact. For urgent same-day bookings, calling us directly ensures the fastest response. We maintain a ready roster of companions available at short notice across all major Mumbai locations.',
+  },
+  {
+    question: 'Are escort services available 24 hours a day?',
+    answer: 'Yes. Hot Sanjana operates 24/7, 365 days a year. Whether you need companionship at noon or midnight, on a weekday or public holiday, our booking team and escorts are always available to accommodate your schedule.',
+  },
+  {
+    question: 'What areas of Mumbai do your services cover?',
+    answer: 'We cover all of Mumbai including South Mumbai, Andheri, Bandra, Juhu, Borivali, Malad, Thane, Navi Mumbai, Panvel, Vasai, Virar, Kalyan, and 90+ more locations. We also arrange services in Pune and other nearby cities.',
+  },
+  {
+    question: 'How is pricing determined for escort services?',
+    answer: 'Pricing depends on the escort profile, service type (incall/outcall/overnight), duration, and location. We maintain transparent pricing with no hidden charges. Contact us directly for a custom quote based on your specific requirements.',
+  },
+  {
+    question: 'Is advance booking required or can I book on short notice?',
+    answer: 'Both options are available. We accommodate advance bookings as well as last-minute requests. For popular profiles and peak hours, advance booking is recommended. For spontaneous bookings, call us and we will arrange the best available companion quickly.',
+  },
+  {
+    question: 'Can escorts be delivered to my hotel room?',
+    answer: 'Yes. Hotel room delivery is one of our most commonly requested services. Our escorts are familiar with all major hotels in Mumbai and can arrive discreetly at your room. They are professional, well-presented, and experienced in hotel bookings.',
+  },
+  {
+    question: 'What is the minimum booking duration for escort services?',
+    answer: 'The minimum booking duration is typically one hour. This applies to both incall and outcall services. Longer bookings of 2–3 hours, half-day, full-day, and overnight are all available and offer better value for your experience.',
+  },
+  {
+    question: 'Can I request a specific escort type or category?',
+    answer: 'Yes. We offer multiple escort categories including VIP, Russian, Bengali, Punjabi, North Indian, housewife, college, GFE, and more. Tell us your preferences and we will match you with the most suitable available companion from our verified roster.',
+  },
+  {
+    question: 'Are your escort services safe and discreet?',
+    answer: 'Safety and discretion are our highest priorities. All escorts are verified and health-screened. Client information is never shared or recorded beyond what is necessary for the booking. All services are conducted with complete professionalism and confidentiality.',
+  },
+  {
+    question: 'Do you provide group or party escort bookings?',
+    answer: 'Yes. We can arrange multiple companions for group bookings, bachelor parties, corporate events, and private gatherings. Group bookings require advance notice. Contact us with the number of companions required and the occasion for a customised arrangement.',
+  },
+  {
+    question: 'What should I do if I am not satisfied with the service?',
+    answer: 'Client satisfaction is our top priority. If for any reason you are not completely satisfied, contact us immediately and we will do everything in our power to resolve the issue. We maintain a strict quality standard and take all client feedback seriously.',
+  },
+]
 
 export const metadata: Metadata = {
   title: 'Our Services | Incall, Outcall, VIP & More | Hot Sanjana Mumbai',
@@ -162,6 +230,8 @@ export default function ServicesPage() {
           </p>
         </div>
       </section>
+
+      <FAQSection faqs={servicesFaqs} title="Escort Services – Frequently Asked Questions" subtitle="Everything you need to know about booking with Hot Sanjana" />
 
       <BookingCTA />
     </>
