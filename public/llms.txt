@@ -1,0 +1,50 @@
+# LLMs.txt for hotsanjana.in
+# This file controls access to the website by large language models and AI crawlers
+# Created: 2026-04-22
+
+# Allow all LLM crawlers by default
+User-agent: *
+Allow: /
+
+# Disallow crawling of specific sensitive paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /.env
+Disallow: /.env.local
+
+# Allow crawling of public content
+Allow: /escorts/
+Allow: /call-girls/
+Allow: /escort-types/
+Allow: /about
+Allow: /contact
+Allow: /services
+Allow: /gallery
+Allow: /location
+Allow: /types
+
+# Specific LLM crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: claudebot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl-delay (in seconds) for respectful crawling
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://hotsanjana.in/sitemap.xml
