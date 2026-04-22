@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next'
 import { getAllLocationSlugs } from '@/data/locations'
 import { getAllEscortTypeSlugs } from '@/data/escort-types'
 import { getAllPatnaLocationSlugs } from '@/data/patna-locations'
+import { getAllLucknowLocationSlugs } from '@/data/lucknow-locations'
 
 const BASE_URL = 'https://hotsanjana.in'
 
@@ -9,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const locationSlugs = getAllLocationSlugs()
   const typeSlugs = getAllEscortTypeSlugs()
   const patnaLocationSlugs = getAllPatnaLocationSlugs()
+  const lucknowLocationSlugs = getAllLucknowLocationSlugs()
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE_URL, lastModified: new Date(), changeFrequency: 'daily', priority: 1.0 },
@@ -34,6 +36,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }))
 
+  const lucknowEscortPages: MetadataRoute.Sitemap = lucknowLocationSlugs.map((slug) => ({
+    url: `${BASE_URL}/escorts/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.85,
+  }))
+
   const callGirlsPages: MetadataRoute.Sitemap = locationSlugs.map((slug) => ({
     url: `${BASE_URL}/call-girls/${slug}`,
     lastModified: new Date(),
@@ -48,5 +57,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }))
 
-  return [...staticPages, ...escortPages, ...patnaEscortPages, ...callGirlsPages, ...typePages]
+  return [...staticPages, ...escortPages, ...patnaEscortPages, ...lucknowEscortPages, ...callGirlsPages, ...typePages]
 }
