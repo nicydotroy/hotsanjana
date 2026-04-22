@@ -29,6 +29,30 @@ const slugs = [
   'em-bypass', 'science-city', 'ruby-crossing', 'mukundapur', 'anandapur', 'kasba',
   // Metro East-West Line
   'phoolbagan', 'sealdah-metro', 'rabindra-sadan-metro',
+  // East-West Metro (Green Line – Western Section)
+  'howrah-maidan', 'howrah-station-metro', 'mahakaran', 'bengal-chemical',
+  // Salt Lake IT Corridor (additional Green Line stations)
+  'central-park-metro', 'karunamoyee-metro', 'city-centre',
+  // BBD Bagh / Administrative Hub
+  'writers-building', 'bbd-bagh', 'dalhousie-square', 'lalbazar',
+  // Central Kolkata (additional)
+  'bowbazar', 'college-street', 'entally',
+  // North Kolkata (additional)
+  'sovabazar', 'bagbazar', 'maniktala', 'cossipore', 'sinthee',
+  // North Belt
+  'dunlop', 'belgharia', 'agarpara', 'sodepur', 'madhyamgram', 'birati',
+  // North-Central Kolkata
+  'lake-town', 'bangur-avenue', 'ultadanga', 'kankurgachi',
+  // East Kolkata (additional)
+  'tangra', 'topsia', 'tiljala',
+  // South-West Kolkata (additional)
+  'metiabruz', 'kidderpore', 'taratala',
+  // South Kolkata (additional)
+  'alipore', 'zoo',
+  // South-West Suburbs
+  'behala', 'sakherbazar', 'thakurpukur', 'joka', 'diamond-harbour-road',
+  // Airport Belt
+  'kolkata-airport',
 ]
 
 function slugToComponentName(slug) {
